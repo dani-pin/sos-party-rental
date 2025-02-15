@@ -1,4 +1,12 @@
 [
-  "en",
-  "es"
+  {
+    "name": "en",
+    "flag": "/images/icons/usa-flag.png",
+    "flag_alt_key": "usa_flag"
+  },
+  {
+    "name": "es",
+    "flag": "/images/icons/spain-flag.png",
+    "flag_alt_key": "spain_flag"
+  }
 ]

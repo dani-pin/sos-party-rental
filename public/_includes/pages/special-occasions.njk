@@ -1,16 +1,18 @@
 ---
-page_id: home
+page_id: special_occasions
 ---
 
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{lang}}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="{{ meta.title }}">
-    <meta name="description" content="{{ meta.description }}">
-    <meta name="keywords" content="{{ meta.keywords }}">
+    <meta name="description"
+        content="{{meta.description}}">
+    <meta name="keywords"
+        content="{{meta.keywords}}">
     <title>{{ title }}</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,255 +29,159 @@ page_id: home
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            AOS.init()
-        })
-    </script>
+     <!-- AOS -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+         window.addEventListener('DOMContentLoaded', () => {
+             AOS.init()
+         })
+     </script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="/styles/shared.css">
-    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/special-occasion.css">
 
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="/scripts/shared.js" defer></script>
+
 </head>
 
 <body>
     {% include "components/nav.njk" %}
 
     <main>
-        <section class="hero">
-            <div class="hero-balls">
-                <div class="hero-ball-1-container">
-                    <img class="hero-ball-1" src="/images/hero-disco-ball-1.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-2-container">
-                    <img class="hero-ball-2" src="/images/hero-disco-ball-2.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-3-container">
-                    <img class="hero-ball-3" src="/images/hero-disco-ball-3.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-4-container">
-                    <img class="hero-ball-4" src="/images/hero-disco-ball-4.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-5-container">
-                    <img class="hero-ball-5" src="/images/hero-disco-ball-5.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-6-container">
-                    <img class="hero-ball-6" src="/images/hero-disco-ball-6.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-7-container">
-                    <img class="hero-ball-7" src="/images/hero-disco-ball-7.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-8-container">
-                    <img class="hero-ball-8" src="/images/hero-disco-ball-8.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-9-container">
-                    <img class="hero-ball-9" src="/images/hero-disco-ball-9.png"
-                        alt="{{ hero.img }}">
-                </div>
-                <div class="hero-ball-10-container">
-                    <img class="hero-ball-10" src="/images/hero-disco-ball-10.png"
-                        alt="{{ hero.img }}">
-                </div>
-            </div>
-            <div class="container hero-info">
-                <h1 class="h1 hero-heading" data-aos="fade-up" data-aos-offset="0">
-                    {{ hero.heading }}
-                </h1>
-                <p class="subheading hero-subheading" data-aos="fade-up" data-aos-delay="300" data-aos-offset="0">
-                    {{ hero.subheading }}
-                </p>
+        <section class="events-hero">
+            <img src="/images/special-ocassion-events-hero-img.png" alt={{hero.img}}
+                class="events-hero-banner">
+
+            <div class="events-hero-content">
+                <h1 class="h1" data-aos="fade-up" data-aos-offset="0">{{ hero.heading }}</h1>
+                <p class="subheading events-hero-description" data-aos="fade-up" data-aos-delay="300"
+                    data-aos-offset="0">{{ hero.subheading}}</p>
                 <a href="https://api.whatsapp.com/send?phone=19543268989" target="_blank" class="btn-primary" data-aos="fade-up"
-                    data-aos-delay="600" data-aos-offset="0">
-                    {{ hero.cta }}
-                </a>
+                    data-aos-delay="600" data-aos-offset="0">{{ hero.cta }}</a>
             </div>
         </section>
 
-        <section class="section experience-section">
-            <div class="container experience-info-container">
-                <div class="experience-info" data-aos="zoom-in">
-                    <p class="h2">+726</p>
-                    <p class="subheading experience-info-subheading">
-                        {{ experience.clients }}
-                    </p>
+        <section class="section event-types-section">
+            <div class="container event-types-container">
+                <div class="event-types-list-container">
+                    <h2 class="h4 event-types-list-title">{{ event_types.heading }}</h2>
+                    <ul class="event-types-list">
+                        {% for type in event_types.types %}
+                        <li> {{ type }} </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-
-                <div class="experience-info" data-aos="zoom-in" data-aos-delay="300">
-                    <p class="h2">19</p>
-                    <p class="subheading experience-info-subheading">
-                        {{ experience.years }}
-                    </p>
-                </div>
-
-                <div class="experience-info" data-aos="zoom-in" data-aos-delay="600">
-                    <p class="h2">+1000</p>
-                    <p class="subheading experience-info-subheading">
-                        {{ experience.events }}
-                    </p>
-                </div>
-
+                <div><img class="border-radius-shadow-img event-types-img " style="object-position: center 57%;"
+                        src="/images/baby-shower-party.png" alt="{{ event_types.img }}"></div>
             </div>
         </section>
 
-        <section id="services" class="container section services-section">
-            <div class="services-container">
-                <p class="subheading section-subheading-title">
-                    {{ services.subheading }}
-                </p>
-                <h2 class="h2">{{ services.heading }}</h2>
-                <div class="services">
-                    <div>
-                        <a href="{{ "page.wedding_planner.link" | i18n }}">
-                            <div class="img-services">
-                                <img class="border-radius-shadow-img" src="/images/wedding-planner-img.png"
-                                    alt="{{ services.wedding_planner.img }}">
-                            </div>
-                            <h3 class="service-title h4">
-                                {{ services.wedding_planner.heading }}
-                            </h3>
-                        </a>
-                        <p class="subheading service-subheading-description">
-                            {{ services.wedding_planner.description }}
-                        </p>
-                        <a href="{{ "page.wedding_planner.link" | i18n }}" class="service-link">
-                            {{ i18n.see_more }}
-                            <span> &rarr;</span>
-                        </a>
+        <div class="special-occasion-events-services-details">
+            <section class="section" style="overflow-x: hidden;">
+                <div class="container">
+                    <div class="section-header">
+                        <div class="heading-line"></div>
+                        <p class="subheading section-subheading-title">{{ services_details.subheading }}</p>
+                        <h2 class="h2">{{ services_details.heading }}</h2>
                     </div>
 
-                    <div>
-                        <a href="{{ "page.corporative_events.link" | i18n }}">
-                            <div class="img-services">
-                                <img class="border-radius-shadow-img" src="/images/corporate-events-img.png" alt="{{ services.corporative_events.img }}">
-                            </div>
-                            <h3 class="service-title h4">
-                                {{ services.corporative_events.heading }}
-                            </h3>
-                        </a>
-                        <p class="subheading service-subheading-description">
-                            {{ services.corporative_events.description }}
-                        </p>
-                        <a href="{{ "page.corporative_events.link" | i18n }}" class="service-link">
-                            {{ i18n.see_more }}
-                            <span> &rarr;</span>
-                        </a>
-                    </div>
+                    {% for service in services_details.services %}
+                    <div class="event-service-container 
+                    {% if service.fade == 'fade-right' %}
+                        event-service-container-reverse
+                    {% endif %}
+                    " data-aos="{{ service.fade }}" 
+                    {% if service.offset %}
+                    data-aos-offset="{{ service.offset }}"
+                    {% endif %}
 
-                    <div>
-                        <a href="{{ "page.special_occasions.link" | i18n }}">
-                            <div class="img-services">
-                                <img class="border-radius-shadow-img" src="/images/special-ocassion-img.png" alt="{{ services.special_occasions.img }}">
-                            </div>
-                            <h3 class="service-title h4">
-                                {{ services.special_occasions.heading }}
-                            </h3>
-                        </a>
-                        <p class="subheading service-subheading-description">
-                            {{ services.special_occasions.description }}
-                        </p>
-                        <a href="{{ "page.special_occasions.link" | i18n }}" class="service-link">
-                            {{ i18n.see_more }}
-                            <span> &rarr;</span>
-                        </a>
-                    </div>
+                    {% if service.placement %}
+                    data-aos-anchor-placement=" {{ service.placement }}"
+                    {% endif %}
+                    data-aos-duration="900">
 
-                    <div>
-                        <a href="{{ "page.product_rental.link" | i18n }}">
-                            <div class="img-services">
-                                <img class="border-radius-shadow-img" src="/images/rental-img.png" alt="{{ services.product_rental.img }}">
-                            </div>
-                            <h3 class="service-title h4">
-                                {{ services.product_rental.heading }}
-                            </h3>
-                        </a>
-                        <p class="subheading service-subheading-description">
-                            {{ services.product_rental.description }}
-                        </p>
-                        <a href="{{ "page.product_rental.link" | i18n }}" class="service-link">
-                            {{ i18n.see_catalog }}
-                            <span> &rarr;</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section process-section-home-page">
-            <div class="container process-container">
-                <div class="process-img-container">
-                    <img class="border-radius-shadow-img" src="/images/kiss-wedding.png"
-                        alt="{{ process.img1 }}">
-                    <div class="overlapping-img"><img class="border-radius-shadow-img" src="/images/ceremony-room.png"
-                            alt="{{ process.img2 }}"></div>
-                </div>
-
-                <div class="process-info" data-aos="fade-left" data-aos-duration="900">
-                    <p class="subheading section-subheading-title">
-                        {{ process.subheading }}
-                    </p>
-                    <h2 class="h2">{{ process.heading }}</h2>
-                    <div class="process-steps">
-                        <div class="step-1">
-                            <div class="step-number process-step-number">01</div>
-                            <div class="process-step-description step-one">
-                                {{ process.step1 }}
-                            </div>
+                        <div class="event-img-container"><img class="border-radius-shadow-img service-mobile-img 
+                            {% if service.fade == 'fade-left' %}
+                            ml-auto
+                            {% endif %}
+                            "
+                                style="object-position: {{service.position}};" src="{{ service.src }}"
+                                alt= {{ service.alt }}>
                         </div>
 
-                        <div class="step-2">
-                            <div class="step-number process-step-number">02</div>
-                            <div class="process-step-description">
-                                {{ process.step2 }}
-                            </div>
-                        </div>
-
-                        <div class="step-3">
-                            <div class="step-number process-step-number">03</div>
-                            <div class="process-step-description">{{ process.step3 }}</div>
+                        <div>
+                            <div class="step-number event-step-number">{{ service.number}}</div>
+                            <h3 class="h4 event-step-title">{{ service.heading }}</h3>
+                            {% for description in service.description %}
+                            <p class="subheading event-step-description">
+                                {% if description.bold %}
+                                <strong>{{ description.bold }} </strong>
+                                {% endif %}
+                                {{ description.paragraph}}</p>
+                            {% endfor %}
                         </div>
                     </div>
-                    <p class="subheading process-subheading-description">
-                        {{ process.description }}
-                    </p>
-                    <a href="https://api.whatsapp.com/send?phone=19543268989" target="_blank" class="btn-primary">
-                        {{ process.cta }}
-                    </a>
+                    {% endfor %}
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <section class="section process-section">
+                <div class="container process-container">
+                    <div class="process-img-container">
+                        <img class="border-radius-shadow-img" src="/images/special-events-process-img-1.png"
+                            alt="{{ process.img1 }}">
+                        <div class="overlapping-img"><img class="border-radius-shadow-img"
+                                src="/images/special-events-process-img-2.png"
+                                alt="{{ process.img2 }}">
+                        </div>
+                    </div>
+
+                    <div class="process-info">
+                        <p class="subheading section-subheading-title">{{ process.subheading }}</p>
+                        <h2 class="h2">{{ process.heading }}</h2>
+                        <div class="process-steps">
+                            <div class="step-1">
+                                <div class="step-number process-step-number">01</div>
+                                <div class="process-step-description step-one">{{ process.step1 }}</div>
+                            </div>
+
+                            <div class="step-2">
+                                <div class="step-number process-step-number">02</div>
+                                <div class="process-step-description">{{ process.step2 }}</div>
+                            </div>
+
+                            <div class="step-3">
+                                <div class="step-number process-step-number">03</div>
+                                <div class="process-step-description">{{ process.step3 }}</div>
+                            </div>
+                        </div>
+                        <p class="subheading process-subheading-description"> {{ process.description }} </p>
+                        <a href="https://api.whatsapp.com/send?phone=19543268989" target="_blank" class="btn-primary"> {{ process.cta }} </a>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <section class="section testimonial-section">
             <div class="container testimonial-container">
                 <div class="testimonial-info-container">
-                    <h2 class="h2 testimonial-container-heading">
-                        {{ testimonials.heading }}
-                    </h2>
+                    <h2 class="h2 testimonial-container-heading"> {{ testimonials.heading }} </h2>
                     <div class="double-quote"></div>
 
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            {% for review in testimonials.reviews %}
+                            {% for review in testimonials.reviews %}    
                             <div class="swiper-slide">
                                 <div class="tesimonial-slide">
                                     <p class="subheading google-review-comment">
-                                        "{{review.comment}}"
+                                        {{ review.comment }}
                                     </p>
                                     <div class="google-review-stars"></div>
-                                    <p class="subheading google-review-name"> {{review.name}}</p>
+                                    <p class="subheading google-review-name"> {{ review.name }} </p>
                                 </div>
                             </div>
                             {% endfor %}
@@ -315,86 +221,27 @@ page_id: home
 
                 <div>
                     <img class="border-radius-shadow-img" src="/images/testimonial-img.png"
-                        alt="{{ testimonials.img }}">
+                        alt=" {{testimonials.img}} ">
                 </div>
             </div>
         </section>
 
-        <div class="find-us-and-gallery-bg">
-            <section class="section gallery-section">
-                <div class="container">
-                    <div class="gallery-info-section">
-                        <h2 class="h2">
-                            {{ gallery.heading }}
-                        </h2>
-                        <a href="{{ "page.gallery.link" | i18n }}" class="btn-secondary">
-                            {{ i18n.see_more }}
-                        </a>
-                    </div>
-                    <div class="gallery-photos">
-                        <div data-aos="zoom-in-up" data-aos-duration="600" data-aos-offset="0"><img
-                                class="border-radius-shadow-img" src="/images/gallery-photo-1.png"
-                                alt="{{ gallery.img1 }}"></div>
-                        <div data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="600" data-aos-offset="0"><img
-                                class="border-radius-shadow-img" src="/images/gallery-photo-2.png"
-                                alt="{{ gallery.img2 }}"></div>
-                        <div data-aos="zoom-in-up" data-aos-delay="600" data-aos-duration="600" data-aos-offset="0"><img
-                                class="border-radius-shadow-img" src="/images/gallery-photo-3.png"
-                                alt="{{ gallery.img3 }}"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="find-us-section section">
-                <div class="container find-us-container">
-                    <iframe class="find-us-map" title="SOS Party Rental Florida | Google Maps"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255348.37250196404!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xacd68d155083dfa5%3A0x5e727525b677cc5a!2sSOS%20Party%20Rental!5e0!3m2!1sen!2suk!4v1736327185520!5m2!1sen!2suk"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <div class="find-us-info">
-                        <h2 class="h2 find-us-heading">
-                            {{ find_us.heading }}
-                        </h2>
-                        <p class="subheading">
-                            8131 Southgate Blvr N. Lauderdale, FL 33068
-                        </p>
-                        <div class="subheading">
-                            <p>{{ i18n.monday }}: 7:00 - 18:00</p>
-                            <p>{{ i18n.tuesday }}: 7:00 - 18:00</p>
-                            <p>{{ i18n.wednesday }}: 7:00 - 18:00</p>
-                            <p>{{ i18n.thursday }}: 7:00 - 18:00</p>
-                            <p>{{ i18n.friday }}: 7:00 - 18:00</p>
-                            <p>{{ i18n.saturday }}: 7:00 - 18:00</p>
-                            <p>{{ i18n.sunday }}: 8:00 - 12:00</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-        </div>
-
-        <section class="section faq-section ">
+        <section class="section event-gallery-section">
             <div class="container">
-                <h2 class="h2 faqs-heading">{{ faq.heading }}</h2>
+                <div class="event-gallery-header">
+                    <div>
+                        <p class="subheading section-subheading-title"> {{gallery.subheading}} </p>
+                        <h2 class="h2"> {{ gallery.heading }} </h2>
+                    </div>
+                    <a href="./galeria-de-fotos-de-eventos-en-florida.html#special-occasions" class="btn-secondary"> {{gallery.cta}} </a>
+                </div>
 
-                <div class="faqs-list">
-                    {% for item in faq.items %}
-                    <div class="faq">
-                        <button class="faq-header">
-                            <span class="subheading">
-                                {{ item.question }}
-                            </span>
-                            <svg class="faq-header-chevron" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9.87498 1.00001L5.99498 4.88001L2.11498 1.00001C1.92814 0.812752 1.67449 0.70752 1.40998 0.70752C1.14546 0.70752 0.891807 0.812752 0.704976 1.00001C0.314976 1.39001 0.314976 2.02001 0.704976 2.41001L5.29498 7.00001C5.68498 7.39001 6.31498 7.39001 6.70498 7.00001L11.295 2.41001C11.685 2.02001 11.685 1.39001 11.295 1.00001C10.905 0.620005 10.265 0.610005 9.87498 1.00001Z"
-                                    fill="#666F77" fill-opacity="1" />
-                            </svg>
-                        </button>
-                        <div class="faq-body">
-                            <p class="subheading">
-                                {{ item.answer }}
-                            </p>
-                        </div>
+                <div class="event-gallery-grid">
+                    {% for img in gallery.imgs %}
+                    <div class="event-gallery-img-container border-radius-shadow-img" style="grid-area: {{ img.grid_area }}"
+                        data-aos="zoom-in-up" data-aos-delay="{{ img.delay }}" data-aos-duration="500" data-aos-offset="0">
+                        <img class="event-gallery-img" src="{{ img.src }}"
+                            alt="{{ img.alt }} ">
                     </div>
                     {% endfor %}
                 </div>
@@ -402,8 +249,8 @@ page_id: home
         </section>
     </main>
 
-    {% include "components/footer.njk" %}
-    {% include "components/whatsapp-button.njk" %}
+   {% include "components/footer.njk" %}
+   {% include "components/whatsapp-button.njk" %}
 </body>
 
 </html>

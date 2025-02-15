@@ -1,0 +1,12 @@
+/* Corporate events services details */
+.corporate-events-services-details {
+    background-image: url("../images/corporate-events-leaves.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 1007px) {
+    .corporate-events-services-details {
+        background-image: unset;
+    }
+}

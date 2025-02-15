@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'URWAmericana';
-  src: url('./fonts/URW-Americana-W01-Regular.woff') format('woff');
+  src: url('../fonts/URW-Americana-W01-Regular.woff') format('woff');
 }
 
 :root {
@@ -204,9 +204,21 @@ button,
 }
 
 /* Site nav */
-.site-nav-primary {
+.site-nav-primary,
+.site-nav-secondary {
   position: relative;
   z-index: 100;
+}
+
+
+.site-nav-primary .site-nav-link, 
+.site-nav-primary .vertical-bar {
+  color: var(--dark-blue);
+}
+
+.site-nav-secondary .site-nav-link,
+.site-nav-secondary .vertical-bar {
+  color: var(--beige-100);
 }
 
 .site-nav-container {
@@ -222,7 +234,7 @@ button,
 
 .site-nav-links {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .site-nav-link,
@@ -242,7 +254,6 @@ button,
 .site-nav-link {
   padding-block: calc(0.25rem + 2px);
   padding-inline: 1rem;
-  color: var(--dark-blue);
 }
 
 .site-nav-link:hover,
@@ -258,8 +269,10 @@ button,
 .site-nav-hamburger {
   width: 50px;
   padding: 10px;
+  margin-left: auto;
   display: none;
   transition: transform 0.1s ease-in-out;
+  order: 1;
 }
 
 .show-mobile-nav .site-nav-hamburger {
@@ -327,13 +340,45 @@ button,
   display: block;
 }
 
+.site-nav-flags {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav-flags a {
+  padding: 0;
+}
+
+.site-nav-flags img {
+  width: 32px;
+  height: 32px;
+}
+
+.site-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 @media (max-width: 890px) {
-  .site-nav-links {
+  .site-nav-links,
+  .site-nav-btn {
     display: none;
+  }
+
+  .site-nav-actions {
+    gap: 0;
   }
 
   .site-nav-hamburger {
     display: block;
+    order: 1;
+    margin-left: 0.3rem;
+  }
+
+  .site-nav-flags img {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -457,7 +502,7 @@ button,
 
 /* Testimonial section */
 .testimonial-section {
-  background-image: url('./images/testimonial-bg.png');
+  background-image: url('../images/testimonial-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -538,7 +583,7 @@ button,
 }
 
 .double-quote {
-  background-image: url('./images/double-quote.svg');
+  background-image: url('../images/double-quote.svg');
   height: 30px;
   width: 37px;
   margin-bottom: 24px;
@@ -700,7 +745,7 @@ button,
 
 /* Gallery section */
 .event-gallery-section {
-  background-image: url('./images/event-gallery-bg.png');
+  background-image: url('../images/event-gallery-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
 }

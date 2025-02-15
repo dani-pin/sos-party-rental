@@ -1,0 +1,95 @@
+---
+page_id: product_rental
+---
+
+<!DOCTYPE html>
+<html lang=" {{lang}} ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="{{ meta.title }}">
+    <meta name="description"
+        content="{{meta.description}}">
+    <meta name="keywords"
+        content=" {{meta.keywords}} ">
+    <title> {{ title }} </title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/shared.css">
+    <link rel="stylesheet" href="/styles/catalog.css">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="/scripts/shared.js" defer></script>
+    <script src="/scripts/catalog.js" defer></script>
+</head>
+
+<body>
+    {% include "components/nav.njk" %}
+   
+    <main class="catalog-page-bg-leaves">
+        <section class="section catalog-page-section">
+            <div class="container">
+                <h1 class="h1">{{heading}}</h1>
+
+                <p class="subheading catalog-description"> {{subheadings.description}}</p>
+
+                <div class="subheading section-subheading-title catalog-subheading"> {{subheadings.product_category}} </div>
+
+                <div class="catalog-tabs">
+                    {% for tab in tabs %}
+                    <div data-target="#{{tab.id}}" class="catalog-tab {{ 'active' if tab.active }}"> {{ tab.label }} </div>
+                    {% endfor %}
+                </div>
+
+                {% for tab in tabs %}
+                    <div id="{{ tab.id }}" class="catalog-cards {{ 'active' if tab.active }}">
+                        {% for card in tab.cards %}
+                            <div class="catalog-card border-radius-shadow-img">
+                                <div class="catalog-card-img-container">
+                                    <img class="catalog-card-img" src="{{ card.src }}" alt="{{ card.alt }}" >
+                                </div>
+
+                                <div class="catalog-card-content">
+                                    <div class="card-title">{{ card.title }}</div>
+
+                                    {% if card.types %}
+                                        <div>{{ card.types_title }}</div>
+                                        <ul class="glasses-types-list">
+                                            {% for type in card.types %}
+                                            <li>{{ type }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+
+                                    {% for price in card.prices %}
+                                        <div class="card-price">
+                                            <div> {{ price.description }} <br>{{ price.br }}</div>
+                                            <div> {{ price.cost }} </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    {% include "components/footer.njk" %}
+    {% include "components/whatsapp-button.njk" %}
+</body>
+
+</html>
