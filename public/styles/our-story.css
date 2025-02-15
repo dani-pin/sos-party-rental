@@ -1,5 +1,5 @@
 .about-me-section {
-    background-image: url(images/about-me-leaves.png);
+    background-image: url('../images/about-me-leaves.png');
     background-size: 100%;
     background-repeat: repeat-y;
     padding-top: 2.5rem;
