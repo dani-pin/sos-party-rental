@@ -8,11 +8,11 @@ page_id: gallery
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content={{meta.title}}>
+    <meta name="title" content="{{meta.title}}">
     <meta name="description"
-        content={{meta.description}}>
+        content="{{meta.description}}">
     <meta name="keywords"
-        content={{meta.keywords}}>
+        content="{{meta.keywords}}">
     <title>{{title}}</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@ page_id: gallery
     <link rel="stylesheet" href="/styles/gallery.css">
 
     <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="/scripts/fslightbox.js" defer></script>
     <script src="/scripts/shared.js" defer></script>
     <script src="/scripts/gallery.js" defer></script>
 </head>
@@ -54,8 +54,10 @@ page_id: gallery
                 <div id="{{ tab.id }}" class="gallery-images {{ 'active' if tab.active }}">
                     {% for image in tab.images %}
                     <div class="gallery-img-container">
-                        <img class="gallery-img border-radius-shadow-img" src="{{ image.url }}"
-                            alt="{{ image.alt }}">
+                        <a data-fslightbox="gallery" href="{{ image.url }}">
+                            <img class="gallery-img border-radius-shadow-img" src="{{ image.url }}"
+                                alt="{{ image.alt }}">
+                        </a>
                     </div>
                     {% endfor %}
                 </div>
