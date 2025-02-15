@@ -55,6 +55,10 @@
     object-fit: cover;
 }
 
+.gallery-img:hover {
+    opacity: 0.9;
+}
+
 .gallery-image-container {
     overflow: hidden;
 }
