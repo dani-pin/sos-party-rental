@@ -55,10 +55,6 @@
     object-fit: cover;
 }
 
-.gallery-img:hover {
-    opacity: 0.9;
-}
-
 .gallery-image-container {
     overflow: hidden;
 }
@@ -76,6 +72,12 @@
     .gallery-tab,
     .gallery-subheading {
         font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 891px) {
+    .gallery-img:hover {
+        opacity: 0.9;
     }
 }
 
