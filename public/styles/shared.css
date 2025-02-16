@@ -635,8 +635,13 @@ button,
   margin-block: 1rem;
 }
 
+.site-footer-link{
+border-bottom: solid 1px transparent;
+}
+
 .site-footer-link:hover {
-  text-decoration: underline;
+  border-bottom-color: var(--orange);
+  color: var(--orange);
 }
 
 /* Whatsapp button */
