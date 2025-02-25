@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          PATH_PREFIX: /sos-party-rental-11ty/
+          PATH_PREFIX: /sos-party-rental/
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
