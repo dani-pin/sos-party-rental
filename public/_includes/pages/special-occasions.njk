@@ -90,11 +90,11 @@ page_id: special_occasions
                     </div>
 
                     {% for service in services_details.services %}
-                    <div class="event-service-container 
+                    <div class="event-service-container
                     {% if service.fade == 'fade-right' %}
                         event-service-container-reverse
                     {% endif %}
-                    " data-aos="{{ service.fade }}" 
+                    " data-aos="{{ service.fade }}"
                     {% if service.offset %}
                     data-aos-offset="{{ service.offset }}"
                     {% endif %}
@@ -104,7 +104,7 @@ page_id: special_occasions
                     {% endif %}
                     data-aos-duration="900">
 
-                        <div class="event-img-container"><img class="border-radius-shadow-img service-mobile-img 
+                        <div class="event-img-container"><img class="border-radius-shadow-img service-mobile-img
                             {% if service.fade == 'fade-left' %}
                             ml-auto
                             {% endif %}
@@ -174,7 +174,7 @@ page_id: special_occasions
 
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            {% for review in testimonials.reviews %}    
+                            {% for review in testimonials.reviews %}
                             <div class="swiper-slide">
                                 <div class="tesimonial-slide">
                                     <p class="subheading google-review-comment">
@@ -249,8 +249,9 @@ page_id: special_occasions
         </section>
     </main>
 
-   {% include "components/footer.njk" %}
-   {% include "components/whatsapp-button.njk" %}
+    {% include "components/footer.njk" %}
+    {% include "components/whatsapp-button.njk" %}
+    {% include "components/simple-analytics.njk" %}
 </body>
 
 </html>
