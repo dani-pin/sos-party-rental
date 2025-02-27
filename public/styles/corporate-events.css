@@ -1,3 +1,8 @@
+/* Nav Hamburguer Menu Color */
+.site-nav-hamburger {
+    color: var(--beige-100);
+}
+
 /* Corporate events services details */
 .corporate-events-services-details {
     background-image: url("../images/corporate-events-leaves.png");

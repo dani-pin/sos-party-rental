@@ -1,3 +1,8 @@
+/* Nav Hamburguer Menu Color */
+.site-nav-hamburger {
+    color: var(--beige-100);
+}
+
 /* Special Occasion events services details */
 .special-occasion-events-services-details {
     background-image: url("../images/special-occasion-leaves.png");

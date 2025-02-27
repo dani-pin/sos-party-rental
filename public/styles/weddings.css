@@ -1,3 +1,8 @@
+/* Nav Hamburguer Menu Color */
+.site-nav-hamburger {
+    color: var(--beige-100);
+}
+
 /* Wedding services details */
 .wedding-services-details {
     background-image: url("../images/wedding-planner-leaves.png");
