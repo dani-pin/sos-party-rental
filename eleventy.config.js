@@ -43,6 +43,12 @@ export default function (eleventyConfig) {
 
     return key
   })
+
+  eleventyConfig.addCollection('sitemap', (collections) => {
+    return collections.getAll().filter((item) => {
+      return item.page.outputFileExtension === 'html'
+    })
+  })
 }
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
