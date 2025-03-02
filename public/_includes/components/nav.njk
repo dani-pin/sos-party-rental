@@ -1,40 +1,83 @@
-<nav class="{{ "site-nav-secondary" if nav.type == "secondary" else "site-nav-primary" }}">
+<nav
+  class="{{ "site-nav-secondary" if nav.type == "secondary" else "site-nav-primary" }}"
+>
   <div class="container site-nav-container">
     <a href="{{ "page.home.link" | i18n }}">
-      <img class="site-nav-logo" src="/images/sos-logo.png" alt="{{ nav.logo }}">
+      <img
+        class="site-nav-logo"
+        src="/images/sos-logo.png"
+        alt="{{ nav.logo }}"
+      />
     </a>
 
     <div class="site-nav-actions">
       <div class="site-nav-links">
-        <a class="site-nav-link" href="{{ "page.home.link" | i18n }}#services">{{ nav.services }}</a>
+        <a class="site-nav-link" href="{{ "page.home.link" | i18n }}#services"
+          >{{ nav.services }}</a
+        >
         <a class="site-nav-link" href="{{ "page.product_rental.link" | i18n }}">
           {{ nav.catalog }}
         </a>
         <a class="site-nav-link" href="{{ "page.gallery.link" | i18n }}">
           {{ nav.gallery }}
         </a>
-        <a class="site-nav-link" href="{{ "page.our_story.link" | i18n }}">{{ nav.our_story }}</a>
+        <a class="site-nav-link" href="{{ "page.our_story.link" | i18n }}"
+          >{{ nav.our_story }}</a
+        >
         <a class="site-nav-link" href="#site-footer">{{ nav.contact }}</a>
       </div>
-    
-      <button id="site-nav-hamburger" class="site-nav-hamburger" aria-label="{{ i18n.open_menu }}">
+
+      <button
+        id="site-nav-hamburger"
+        class="site-nav-hamburger"
+        aria-label="{{ i18n.open_menu }}"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-          <path d="M4 18L20 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-          <path d="M4 12L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-          <path d="M4 6L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path
+            d="M4 18L20 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
+          <path
+            d="M4 12L20 12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
+          <path
+            d="M4 6L20 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
         </svg>
       </button>
-  
-      <a href="https://api.whatsapp.com/send?phone=19543268989" target="_blank" class="btn-secondary site-nav-btn">
+
+      <a
+        href="https://api.whatsapp.com/send?phone=19543268989"
+        target="_blank"
+        class="btn-secondary site-nav-btn"
+      >
         {{ nav.cta }}
       </a>
-  
+
       <div class="site-nav-flags">
         {% for language in languages %}
           {% if language.name != lang %}
-          <a href="{{ ("page." + page_id + ".link") | i18n(language.name) }}" class="site-nav-link" style="margin: 0; padding-inline: 0.5em;">
-            <img src="{{ language.flag }}" alt="{{ language.flag_alt_key | i18n }}" loading="eager" decoding="async" sizes="(max-width: 890px) 26px, 32px">
-          </a>
+            <a
+              href="{{ ("page." + page_id + ".link") | i18n(language.name) }}"
+              class="site-nav-link"
+              style="margin: 0; padding-inline: 0.5em;"
+            >
+              <img
+                src="{{ language.flag }}"
+                alt="{{ language.flag_alt_key | i18n }}"
+                loading="eager"
+                decoding="async"
+                sizes="(max-width: 890px) 26px, 32px"
+              />
+            </a>
           {% endif %}
         {% endfor %}
       </div>
@@ -42,23 +85,44 @@
   </div>
 
   <div class="mobile-site-nav">
-    <a class="mobile-site-nav-link" href="{{ "page.home.link" | i18n }}#services">{{ nav.services }}</a>
-    <a class="mobile-site-nav-link" href="{{ "page.product_rental.link" | i18n }}">
+    <a
+      class="mobile-site-nav-link"
+      href="{{ "page.home.link" | i18n }}#services"
+      >{{ nav.services }}</a
+    >
+    <a
+      class="mobile-site-nav-link"
+      href="{{ "page.product_rental.link" | i18n }}"
+    >
       {{ nav.catalog }}
     </a>
     <a class="mobile-site-nav-link" href="{{ "page.gallery.link" | i18n }}">
       {{ nav.gallery }}
     </a>
-    <a class="mobile-site-nav-link" href="{{ "page.our_story.link" | i18n }}">{{ nav.our_story }}</a>
+    <a class="mobile-site-nav-link" href="{{ "page.our_story.link" | i18n }}"
+      >{{ nav.our_story }}</a
+    >
     <a class="mobile-site-nav-link" href="#site-footer">{{ nav.contact }}</a>
-    <a href="https://api.whatsapp.com/send?phone=19543268989" class="btn-secondary mobile-site-nav-btn">
+    <a
+      href="https://api.whatsapp.com/send?phone=19543268989"
+      class="btn-secondary mobile-site-nav-btn"
+    >
       {{ nav.cta }}
     </a>
 
-    <button id="mobile-site-nav-close" class="mobile-site-nav-close" aria-label="{{ i18n.close_menu }}">
+    <button
+      id="mobile-site-nav-close"
+      class="mobile-site-nav-close"
+      aria-label="{{ i18n.close_menu }}"
+    >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-        <path d="M19 5L5 19M5.00001 5L19 19" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-          stroke-linejoin="round"></path>
+        <path
+          d="M19 5L5 19M5.00001 5L19 19"
+          stroke="#000000"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
       </svg>
     </button>
   </div>

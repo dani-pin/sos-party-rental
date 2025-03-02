@@ -1,46 +1,45 @@
 .about-me-section {
-    background-image: url('../images/about-me-leaves.png');
-    background-size: 100%;
-    background-repeat: repeat-y;
-    padding-top: 2.5rem;
+  background-image: url('../images/about-me-leaves.png');
+  background-size: 100%;
+  background-repeat: repeat-y;
+  padding-top: 2.5rem;
 }
 
 .about-me-container {
-    display: grid;
-    gap: 3rem;
-    justify-items: center;
-    max-width: 1000px;
+  display: grid;
+  gap: 3rem;
+  justify-items: center;
+  max-width: 1000px;
 }
 
 .about-me-heading {
-    text-align: center;
+  text-align: center;
 }
 
 .about-me-info {
-    max-width: 765px;
-    text-align: justify;
-    background-color: var(--beige-200);
-    padding: 30px;
-    border-radius: 10px;
-
+  max-width: 765px;
+  text-align: justify;
+  background-color: var(--beige-200);
+  padding: 30px;
+  border-radius: 10px;
 }
 
-.about-me-info>p:not(:first-child) {
-    margin-top: 1.5rem;
+.about-me-info > p:not(:first-child) {
+  margin-top: 1.5rem;
 }
 
-@media(max-width:1007px) {
-    .about-me-section {
-        padding-top: 2rem;
-    }
+@media (max-width: 1007px) {
+  .about-me-section {
+    padding-top: 2rem;
+  }
 
-    .about-me-container {
-        gap: 2rem;
-    }
+  .about-me-container {
+    gap: 2rem;
+  }
 }
 
-@media(max-width:555px) {
-    .about-me-container {
-        gap: 1.2rem;
-    }
+@media (max-width: 555px) {
+  .about-me-container {
+    gap: 1.2rem;
+  }
 }
