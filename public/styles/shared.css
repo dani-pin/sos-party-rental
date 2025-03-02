@@ -693,15 +693,13 @@ button,
   display: inline-block;
   background-color: var(--orange);
   color: var(--white);
-  padding: 10px 15px;
   border-radius: 50px;
   text-decoration: none;
-  font-size: 3em;
+  width: 82.5px;
 }
 
-.whatsapp-btn:hover {
-  background-color: #f07868;
-  color: var(--white);
+.whatsapp-container svg {
+  display: block;
 }
 
 @keyframes shake {
@@ -949,8 +947,7 @@ button,
   }
 
   .whatsapp-btn {
-    font-size: 2.2em;
-    padding: 8px 11px;
+    width: 60.5px;
   }
 
   .site-footer-logo {
