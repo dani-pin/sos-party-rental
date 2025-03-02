@@ -1,17 +1,17 @@
 /* Nav Hamburguer Menu Color */
 .site-nav-hamburger {
-    color: var(--beige-100);
+  color: var(--beige-100);
 }
 
 /* Corporate events services details */
 .corporate-events-services-details {
-    background-image: url("../images/corporate-events-leaves.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url('../images/corporate-events-leaves.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 1007px) {
-    .corporate-events-services-details {
-        background-image: unset;
-    }
+  .corporate-events-services-details {
+    background-image: unset;
+  }
 }

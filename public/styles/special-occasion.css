@@ -1,17 +1,17 @@
 /* Nav Hamburguer Menu Color */
 .site-nav-hamburger {
-    color: var(--beige-100);
+  color: var(--beige-100);
 }
 
 /* Special Occasion events services details */
 .special-occasion-events-services-details {
-    background-image: url("../images/special-occasion-leaves.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url('../images/special-occasion-leaves.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 1007px) {
-    .special-occasion-events-services-details {
-        background-image: unset;
-    }
+  .special-occasion-events-services-details {
+    background-image: unset;
+  }
 }

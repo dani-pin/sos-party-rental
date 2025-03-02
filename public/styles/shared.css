@@ -210,7 +210,6 @@ button,
   z-index: 100;
 }
 
-
 .site-nav-primary .site-nav-link,
 .site-nav-primary .vertical-bar {
   color: var(--dark-blue);
@@ -362,7 +361,6 @@ button,
 }
 
 @media (max-width: 890px) {
-
   .site-nav-links,
   .site-nav-btn {
     display: none;
@@ -674,7 +672,6 @@ button,
 }
 
 @keyframes shake {
-
   10%,
   90% {
     transform: translate3d(-1px, 0, 0);
@@ -959,7 +956,6 @@ button,
 }
 
 @media only screen and (min-width: 768px) {
-
   .testimonial-info-container,
   .testimonial-info-container-reverse {
     padding: 35px 67px;
@@ -974,7 +970,6 @@ button,
 }
 
 @media (max-width: 555px) {
-
   .site-footer-heading,
   .footer-info,
   .footer-info a {

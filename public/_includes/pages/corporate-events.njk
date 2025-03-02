@@ -2,257 +2,388 @@
 page_id: corporative_events
 ---
 
-
 <!DOCTYPE html>
-<html lang="{{lang}}">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content=" {{ meta.title }} ">
-    <meta name="description"
-        content=" {{meta.description}} ">
-    <meta name="keywords"
-        content=" {{meta.keywords}} ">
-    <title> {{ title }} </title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content=" {{ meta.title }} " />
+    <meta name="description" content=" {{ meta.description }} " />
+    <meta name="keywords" content=" {{ meta.keywords }} " />
+    <title>{{ title }}</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
 
-     <!-- AOS -->
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script>
-         window.addEventListener('DOMContentLoaded', () => {
-             AOS.init()
-         })
-     </script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        AOS.init()
+      })
+    </script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/styles/shared.css">
-    <link rel="stylesheet" href="/styles/corporate-events.css">
+    <link rel="stylesheet" href="/styles/shared.css" />
+    <link rel="stylesheet" href="/styles/corporate-events.css" />
 
     <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
     <script src="/scripts/shared.js" defer></script>
+  </head>
 
-</head>
-
-<body>
-   {% include "components/nav.njk" %}
+  <body>
+    {% include "components/nav.njk" %}
 
     <main>
-        <section class="events-hero">
-            <img src="/images/corporate-events-hero-img.png"
-                alt="{{hero.img}}"
-                class="events-hero-banner">
+      <section class="events-hero">
+        <img
+          src="/images/corporate-events-hero-img.png"
+          alt="{{ hero.img }}"
+          class="events-hero-banner"
+        />
 
-            <div class="events-hero-content">
-                <h1 class="h1" data-aos="fade-up" data-aos-offset="0"> {{ hero.heading }} </h1>
-                <p class="subheading events-hero-description" data-aos="fade-up" data-aos-delay="300"
-                    data-aos-offset="0"> {{ hero.subheading}} </p>
-                <a href="https://api.whatsapp.com/send?phone=19543268989" target="_blank" class="btn-primary" data-aos="fade-up"
-                    data-aos-delay="600" data-aos-offset="0"> {{ hero.cta }} </a>
-            </div>
-        </section>
-
-        <section class="section event-types-section">
-            <div class="container event-types-container">
-                <div class="event-types-list-container">
-                    <h2 class="h4 event-types-list-title"> {{ event_types.heading }} </h2>
-                    <ul class="event-types-list">
-                        {% for type in event_types.types %}
-                        <li> {{ type }} </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-
-                <div><img class="border-radius-shadow-img event-types-img" src="/images/corporate-party.png"
-                        alt="{{ event_types.img }}"></div>
-            </div>
-        </section>
-
-        <div class="corporate-events-services-details">
-            <section class="section" style="overflow-x: hidden;">
-                <div class="container">
-                    <div class="section-header">
-                        <div class="heading-line"></div>
-                        <p class="subheading section-subheading-title">{{ services_details.subheading }}</p>
-                        <h2 class="h2"> {{ services_details.heading }} </h2>
-                    </div>
-
-                    {% for service in services_details.services %}
-                    <div class="event-service-container
-                    {% if service.fade == 'fade-right' %}
-                        event-service-container-reverse
-                    {% endif %}
-                    " data-aos="{{ service.fade }}"
-                    {% if service.offset %}
-                    data-aos-offset="{{ service.offset }}"
-                    {% endif %}
-
-                    {% if service.placement %}
-                    data-aos-anchor-placement=" {{ service.placement }}"
-                    {% endif %}
-                    data-aos-duration="900">
-
-                        <div class="event-img-container"><img class="border-radius-shadow-img service-mobile-img
-                            {% if service.fade == 'fade-left' %}
-                            ml-auto
-                            {% endif %}
-                            "
-                                style="object-position: {{service.position}};" src="{{ service.src }}"
-                                alt="{{ service.alt }}">
-                        </div>
-
-                        <div>
-                            <div class="step-number event-step-number">{{ service.number}}</div>
-                            <h3 class="h4 event-step-title">{{ service.heading }}</h3>
-                            {% for description in service.description %}
-                            <p class="subheading event-step-description">
-                                {% if description.bold %}
-                                <strong>{{ description.bold }} </strong>
-                                {% endif %}
-                                {{ description.paragraph}}</p>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
-
-            <section class="section process-section">
-                <div class="container process-container">
-                    <div class="process-img-container">
-                        <img class="border-radius-shadow-img" src="/images/corporate-events-process-img-1.png"
-                            alt=" {{ process.img1 }} ">
-                        <div class="overlapping-img"><img class="border-radius-shadow-img"
-                                src="/images/corporate-events-process-img-2.png"
-                                alt=" {{ process.img2 }} ">
-                        </div>
-                    </div>
-
-                    <div class="process-info">
-                        <p class="subheading section-subheading-title"> {{ process.subheading }} </p>
-                        <h2 class="h2"> {{ process.heading }} </h2>
-                        <div class="process-steps">
-                            <div class="step-1">
-                                <div class="step-number process-step-number">01</div>
-                                <div class="process-step-description step-one"> {{ process.step1 }} </div>
-                            </div>
-
-                            <div class="step-2">
-                                <div class="step-number process-step-number">02</div>
-                                <div class="process-step-description"> {{ process.step2 }} </div>
-                            </div>
-
-                            <div class="step-3">
-                                <div class="step-number process-step-number">03</div>
-                                <div class="process-step-description"> {{ process.step3 }} </div>
-                            </div>
-                        </div>
-                        <p class="subheading process-subheading-description"> {{ process.description }} </p>
-                        <a href="https://api.whatsapp.com/send?phone=19543268989" target="_blank" class="btn-primary"> {{ process.cta }} </a>
-                    </div>
-                </div>
-            </section>
+        <div class="events-hero-content">
+          <h1 class="h1" data-aos="fade-up" data-aos-offset="0">
+            {{ hero.heading }}
+          </h1>
+          <p
+            class="subheading events-hero-description"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-offset="0"
+          >
+            {{ hero.subheading }}
+          </p>
+          <a
+            href="https://api.whatsapp.com/send?phone=19543268989"
+            target="_blank"
+            class="btn-primary"
+            data-aos="fade-up"
+            data-aos-delay="600"
+            data-aos-offset="0"
+          >
+            {{ hero.cta }}
+          </a>
         </div>
+      </section>
 
-        <section class="section testimonial-section">
-            <div class="container testimonial-container">
-                <div class="testimonial-info-container">
-                    <h2 class="h2 testimonial-container-heading"> {{ testimonials.heading }} </h2>
-                    <div class="double-quote"></div>
+      <section class="section event-types-section">
+        <div class="container event-types-container">
+          <div class="event-types-list-container">
+            <h2 class="h4 event-types-list-title">{{ event_types.heading }}</h2>
+            <ul class="event-types-list">
+              {% for type in event_types.types %}
+                <li>{{ type }}</li>
+              {% endfor %}
+            </ul>
+          </div>
 
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            {% for review in testimonials.reviews %}
-                            <div class="swiper-slide">
-                                <div class="tesimonial-slide">
-                                    <p class="subheading google-review-comment">
-                                        {{ review.comment }}
-                                    </p>
-                                    <div class="google-review-stars"></div>
-                                    <p class="subheading google-review-name"> {{ review.name }} </p>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
+          <div>
+            <img
+              class="border-radius-shadow-img event-types-img"
+              src="/images/corporate-party.png"
+              alt="{{ event_types.img }}"
+            />
+          </div>
+        </div>
+      </section>
 
-                    <div class="testimonial-controls">
-                        <svg class="swiper-button-prev" viewBox="0 0 16 23" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <rect x="16" y="23" width="16" height="23" transform="rotate(180 16 23)"
-                                fill="url(#pattern0_62296_3420)" fill-opacity="0.8" />
-                            <defs>
-                                <pattern id="pattern0_62296_3420" patternContentUnits="objectBoundingBox" width="1"
-                                    height="1">
-                                    <use xlink:href="#image0_62296_3420"
-                                        transform="matrix(0.00970874 0 0 0.00653595 -0.737864 -0.333333)" />
-                                </pattern>
-                                <image id="image0_62296_3420" width="256" height="256"
-                                    xlink:href="data:image/png;base64,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" />
-                            </defs>
-                        </svg>
-                        <div class="swiper-pagination"></div>
-                        <svg class="swiper-button-next" viewBox="0 0 20 25" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="20" height="25" fill="url(#pattern0_62296_3419)" fill-opacity="0.8" />
-                            <defs>
-                                <pattern id="pattern0_62296_3419" patternContentUnits="objectBoundingBox" width="1"
-                                    height="1">
-                                    <use xlink:href="#image0_62296_3419"
-                                        transform="matrix(0.00830078 0 0 0.0063244 -0.5625 -0.285714)" />
-                                </pattern>
-                                <image id="image0_62296_3419" width="256" height="256"
-                                    xlink:href="data:image/png;base64,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" />
-                            </defs>
-                        </svg>
-                    </div>
+      <div class="corporate-events-services-details">
+        <section class="section" style="overflow-x: hidden;">
+          <div class="container">
+            <div class="section-header">
+              <div class="heading-line"></div>
+              <p class="subheading section-subheading-title">
+                {{ services_details.subheading }}
+              </p>
+              <h2 class="h2">{{ services_details.heading }}</h2>
+            </div>
+
+            {% for service in services_details.services %}
+              <div
+                class="event-service-container
+                    {% if service.fade == 'fade-right' %}
+                  event-service-container-reverse
+                {% endif %}
+                    "
+                data-aos="{{ service.fade }}"
+                {% if service.offset %}
+                  data-aos-offset="{{ service.offset }}"
+                {% endif %}
+
+                {% if service.placement %}
+                  data-aos-anchor-placement=" {{ service.placement }}"
+                {% endif %}
+                data-aos-duration="900"
+              >
+                <div class="event-img-container">
+                  <img
+                    class="border-radius-shadow-img service-mobile-img
+                            {% if service.fade == 'fade-left' %}
+                      ml-auto
+                    {% endif %}
+                            "
+                    style="object-position: {{ service.position }};"
+                    src="{{ service.src }}"
+                    alt="{{ service.alt }}"
+                  />
                 </div>
 
                 <div>
-                    <img class="border-radius-shadow-img" src="/images/testimonial-img.png"
-                        alt=" {{testimonials.img}} ">
+                  <div class="step-number event-step-number">
+                    {{ service.number }}
+                  </div>
+                  <h3 class="h4 event-step-title">{{ service.heading }}</h3>
+                  {% for description in service.description %}
+                    <p class="subheading event-step-description">
+                      {% if description.bold %}
+                        <strong>{{ description.bold }} </strong>
+                      {% endif %}
+                      {{ description.paragraph }}
+                    </p>
+                  {% endfor %}
                 </div>
-            </div>
+              </div>
+            {% endfor %}
+          </div>
         </section>
 
-        <section class="section event-gallery-section">
-            <div class="container">
-                <div class="event-gallery-header">
-                    <div>
-                        <p class="subheading section-subheading-title"> {{gallery.subheading}} </p>
-                        <h2 class="h2"> {{ gallery.heading }} </h2>
-                    </div>
-                    <a href="./galeria-de-fotos-de-eventos-en-florida.html#corporate-events" class="btn-secondary"> {{gallery.cta}} </a>
+        <section class="section process-section">
+          <div class="container process-container">
+            <div class="process-img-container">
+              <img
+                class="border-radius-shadow-img"
+                src="/images/corporate-events-process-img-1.png"
+                alt=" {{ process.img1 }} "
+              />
+              <div class="overlapping-img">
+                <img
+                  class="border-radius-shadow-img"
+                  src="/images/corporate-events-process-img-2.png"
+                  alt=" {{ process.img2 }} "
+                />
+              </div>
+            </div>
+
+            <div class="process-info">
+              <p class="subheading section-subheading-title">
+                {{ process.subheading }}
+              </p>
+              <h2 class="h2">{{ process.heading }}</h2>
+              <div class="process-steps">
+                <div class="step-1">
+                  <div class="step-number process-step-number">01</div>
+                  <div class="process-step-description step-one">
+                    {{ process.step1 }}
+                  </div>
                 </div>
 
-                <div class="event-gallery-grid">
-                    {% for img in gallery.imgs %}
-                    <div class="event-gallery-img-container border-radius-shadow-img" style="grid-area: {{ img.grid_area }}"
-                        data-aos="zoom-in-up" data-aos-delay="{{ img.delay }}" data-aos-duration="500" data-aos-offset="0">
-                        <img class="event-gallery-img" src="{{ img.src }}"
-                            alt="{{ img.alt }} ">
-                    </div>
-                    {% endfor %}
+                <div class="step-2">
+                  <div class="step-number process-step-number">02</div>
+                  <div class="process-step-description">
+                    {{ process.step2 }}
+                  </div>
                 </div>
+
+                <div class="step-3">
+                  <div class="step-number process-step-number">03</div>
+                  <div class="process-step-description">
+                    {{ process.step3 }}
+                  </div>
+                </div>
+              </div>
+              <p class="subheading process-subheading-description">
+                {{ process.description }}
+              </p>
+              <a
+                href="https://api.whatsapp.com/send?phone=19543268989"
+                target="_blank"
+                class="btn-primary"
+              >
+                {{ process.cta }}
+              </a>
             </div>
+          </div>
         </section>
+      </div>
+
+      <section class="section testimonial-section">
+        <div class="container testimonial-container">
+          <div class="testimonial-info-container">
+            <h2 class="h2 testimonial-container-heading">
+              {{ testimonials.heading }}
+            </h2>
+            <div class="double-quote"></div>
+
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                {% for review in testimonials.reviews %}
+                  <div class="swiper-slide">
+                    <div class="tesimonial-slide">
+                      <p class="subheading google-review-comment">
+                        {{ review.comment }}
+                      </p>
+                      <div class="google-review-stars"></div>
+                      <p class="subheading google-review-name">
+                        {{ review.name }}
+                      </p>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="testimonial-controls">
+              <svg
+                class="swiper-button-prev"
+                viewBox="0 0 16 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <rect
+                  x="16"
+                  y="23"
+                  width="16"
+                  height="23"
+                  transform="rotate(180 16 23)"
+                  fill="url(#pattern0_62296_3420)"
+                  fill-opacity="0.8"
+                />
+                <defs>
+                  <pattern
+                    id="pattern0_62296_3420"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_62296_3420"
+                      transform="matrix(0.00970874 0 0 0.00653595 -0.737864 -0.333333)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_62296_3420"
+                    width="256"
+                    height="256"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+              <div class="swiper-pagination"></div>
+              <svg
+                class="swiper-button-next"
+                viewBox="0 0 20 25"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="20"
+                  height="25"
+                  fill="url(#pattern0_62296_3419)"
+                  fill-opacity="0.8"
+                />
+                <defs>
+                  <pattern
+                    id="pattern0_62296_3419"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use
+                      xlink:href="#image0_62296_3419"
+                      transform="matrix(0.00830078 0 0 0.0063244 -0.5625 -0.285714)"
+                    />
+                  </pattern>
+                  <image
+                    id="image0_62296_3419"
+                    width="256"
+                    height="256"
+                    xlink:href="data:image/png;base64,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"
+                  />
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <div>
+            <img
+              class="border-radius-shadow-img"
+              src="/images/testimonial-img.png"
+              alt=" {{ testimonials.img }} "
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section event-gallery-section">
+        <div class="container">
+          <div class="event-gallery-header">
+            <div>
+              <p class="subheading section-subheading-title">
+                {{ gallery.subheading }}
+              </p>
+              <h2 class="h2">{{ gallery.heading }}</h2>
+            </div>
+            <a
+              href="./galeria-de-fotos-de-eventos-en-florida.html#corporate-events"
+              class="btn-secondary"
+            >
+              {{ gallery.cta }}
+            </a>
+          </div>
+
+          <div class="event-gallery-grid">
+            {% for img in gallery.imgs %}
+              <div
+                class="event-gallery-img-container border-radius-shadow-img"
+                style="grid-area: {{ img.grid_area }}"
+                data-aos="zoom-in-up"
+                data-aos-delay="{{ img.delay }}"
+                data-aos-duration="500"
+                data-aos-offset="0"
+              >
+                <img
+                  class="event-gallery-img"
+                  src="{{ img.src }}"
+                  alt="{{ img.alt }} "
+                />
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
     </main>
 
-  {% include "components/footer.njk" %}
-  {% include "components/whatsapp-button.njk" %}
-  {% include "components/simple-analytics.njk" %}
-</body>
+    {% include "components/footer.njk" %}
+    {% include "components/whatsapp-button.njk" %}
+    {% include "components/simple-analytics.njk" %}
+  </body>
+</html>
