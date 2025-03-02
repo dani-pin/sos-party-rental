@@ -1,35 +1,25 @@
 import 'dotenv/config'
-import path from 'path'
 import { EleventyHtmlBasePlugin } from '@11ty/eleventy'
-import { eleventyImageTransformPlugin } from '@11ty/eleventy-img'
+import esbuildPlugin from './lib/plugins/esbuild-plugin.js'
+import imageTransformPlugin from './lib/plugins/image-transform-plugin.js'
+import sitemapPlugin from './lib/plugins/sitemap-plugin.js'
+import htmlMinifierPlugin from './lib/plugins/html-minifier-plugin.js'
+import xmlMinifierPlugin from './lib/plugins/xml-minifier-plugin.js'
+import cssMinifierPlugin from './lib/plugins/css-minifier-plugin.js'
+import svgMinifierPlugin from './lib/plugins/svg-minifier-plugin.js'
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy('./public/fonts/')
-  eleventyConfig.addPassthroughCopy('./public/images/')
-  eleventyConfig.addPassthroughCopy('./public/**/*.{css,js}')
+  eleventyConfig.setQuietMode(true)
 
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ['avif', 'webp', 'auto'],
-
-    widths: [200, 400, 850, 1920, 2500],
-
-    htmlOptions: {
-      imgAttributes: {
-        loading: 'lazy',
-        decoding: 'async',
-      },
-      pictureAttributes: {},
-    },
-
-    filenameFormat: (id, src, width, format, options) => {
-      const extension = path.extname(src)
-      const name = path.basename(src, extension)
-      return `${name}-${width}w.${format}`
-    },
+  // PASSTHROUGH COPIES
+  eleventyConfig.addPassthroughCopy('public/images/', {
+    // SVGs are handled by the minifier plugin
+    filter: '!*.svg',
   })
+  eleventyConfig.addPassthroughCopy('public/fonts/')
 
+  // FILTERS/SHORTCODES
   eleventyConfig.addFilter('i18n', function (key, lang) {
     lang ??= this.ctx.lang
 
@@ -44,11 +34,19 @@ export default function (eleventyConfig) {
     return key
   })
 
-  eleventyConfig.addCollection('sitemap', (collections) => {
-    return collections.getAll().filter((item) => {
-      return item.page.outputFileExtension === 'html'
-    })
-  })
+  // PLUGINS
+  eleventyConfig.addPlugin(sitemapPlugin)
+
+  // TRANSFORM/COMPILATION PLUGINS
+  // resolve absolute paths using configured path prefix
+  // (e.g. img src attributes and css link attributes)
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
+  eleventyConfig.addPlugin(imageTransformPlugin)
+  eleventyConfig.addPlugin(htmlMinifierPlugin)
+  eleventyConfig.addPlugin(xmlMinifierPlugin)
+  eleventyConfig.addPlugin(svgMinifierPlugin)
+  eleventyConfig.addPlugin(cssMinifierPlugin)
+  eleventyConfig.addPlugin(esbuildPlugin)
 }
 
 /** @param {import("@11ty/eleventy").UserConfig} config */

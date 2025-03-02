@@ -1,3 +1,6 @@
 {
-    "html.validate.styles": false
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
