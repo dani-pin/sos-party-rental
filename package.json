@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
+    "preview": "npx serve _site/",
     "format": "prettier --write '**/*.{html,css,scss,js,json,md,njk}'"
   },
   "author": "",

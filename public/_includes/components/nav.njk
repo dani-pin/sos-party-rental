@@ -72,13 +72,14 @@
               href="{{ ("page." + page_id + ".link") | i18n(language.name) }}"
               class="site-nav-link"
               style="margin: 0; padding-inline: 0.5em;"
+              aria-label="Switch to {{ language.name }}"
             >
               <img
                 src="{{ language.flag }}"
                 alt="{{ language.flag_alt_key | i18n }}"
+                sizes="32px"
+                eleventy:widths="32,64"
                 loading="eager"
-                decoding="async"
-                sizes="(max-width: 890px) 26px, 32px"
               />
             </a>
           {% endif %}

@@ -31,7 +31,7 @@ page_id: home
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     media="print"
-    onload="this.media='all';this.onload=undefined;"
+    onload="this.media='all'; this.onload=null;"
   />
   <script
     src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
@@ -39,7 +39,12 @@ page_id: home
   ></script>
 
   <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'; this.onload=null;"
+  />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -230,7 +235,7 @@ page_id: home
                 class="border-radius-shadow-img"
                 src="/images/wedding-planner-img.png"
                 alt="{{ services.wedding_planner.img }}"
-                sizes="(min-width 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
                 eleventy:widths="231,462,703,1406,auto"
               />
             </div>
@@ -257,7 +262,7 @@ page_id: home
                 class="border-radius-shadow-img"
                 src="/images/corporate-events-img.png"
                 alt="{{ services.corporative_events.img }}"
-                sizes="(min-width 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
                 eleventy:widths="231,462,703,1406,auto"
               />
             </div>
@@ -284,7 +289,7 @@ page_id: home
                 class="border-radius-shadow-img"
                 src="/images/special-ocassion-img.png"
                 alt="{{ services.special_occasions.img }}"
-                sizes="(min-width 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
                 eleventy:widths="231,462,703,1406,auto"
               />
             </div>
@@ -311,7 +316,7 @@ page_id: home
                 class="border-radius-shadow-img"
                 src="/images/rental-img.png"
                 alt="{{ services.product_rental.img }}"
-                sizes="(min-width 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
                 eleventy:widths="231,462,703,1406,auto"
               />
             </div>
@@ -341,7 +346,7 @@ page_id: home
           class="border-radius-shadow-img"
           src="/images/kiss-wedding.png"
           alt="{{ process.img1 }}"
-          sizes="(min-width 1163px) 450px, (min-width: 1008px) 40vw, (min-width: 532px) 350px, 65vw"
+          sizes="(min-width: 1163px) 450px, (min-width: 1008px) 40vw, (min-width: 532px) 350px, 65vw"
           eleventy:widths="201,450,700,900,auto"
         />
         <div class="overlapping-img">
@@ -349,7 +354,7 @@ page_id: home
             class="border-radius-shadow-img"
             src="/images/ceremony-room.png"
             alt="{{ process.img2 }}"
-            sizes="(min-width 1163px) 228px, (min-width: 1008px) 20vw, (min-width: 532px) 177px, 35vw"
+            sizes="(min-width: 1163px) 228px, (min-width: 1008px) 20vw, (min-width: 532px) 177px, 35vw"
             eleventy:widths="102,227,454,auto"
           />
         </div>
@@ -519,7 +524,7 @@ page_id: home
               class="border-radius-shadow-img"
               src="/images/gallery-photo-1.png"
               alt="{{ gallery.img1 }}"
-              sizes="(min-width 1163px) 364px, (min-width: 768px) 34vw, 100vw"
+              sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
               eleventy:widths="288,568,1136,auto"
             />
           </div>
@@ -533,7 +538,7 @@ page_id: home
               class="border-radius-shadow-img"
               src="/images/gallery-photo-2.png"
               alt="{{ gallery.img2 }}"
-              sizes="(min-width 1163px) 364px, (min-width: 768px) 34vw, 100vw"
+              sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
               eleventy:widths="288,568,1136,auto"
             />
           </div>
@@ -547,7 +552,7 @@ page_id: home
               class="border-radius-shadow-img"
               src="/images/gallery-photo-3.png"
               alt="{{ gallery.img3 }}"
-              sizes="(min-width 1163px) 364px, (min-width: 768px) 34vw, 100vw"
+              sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
               eleventy:widths="288,568,1136,auto"
             />
           </div>
