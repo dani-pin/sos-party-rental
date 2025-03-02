@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <!-- Preloads -->
+    {% block preloads %}{% endblock preloads %}
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if meta.title %}
+      <meta name="title" content="{{ meta.title }}" />
+    {% endif %}
+    {% if meta.description %}
+      <meta name="description" content="{{ meta.description }}" />
+    {% endif %}
+    {% if meta.keywords %}
+      <meta name="keywords" content="{{ meta.keywords }}" />
+    {% endif %}
+    <title>{{ title }}</title>
+    <meta name="generator" content="{{ eleventy.generator }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      onload="this.media='all';this.onload=undefined;"
+    />
+
+    {% block head %}{% endblock head %}
+
+    <!-- Assets -->
+    <link rel="stylesheet" href="/styles/shared.css" />
+    <script src="/scripts/shared.js" defer></script>
+    {% block assets %}{% endblock assets %}
+  </head>
+
+  <body>
+    {% include "components/nav.njk" %}
+
+    <main id="main">
+      {% block main %}
+        {{ content | safe }}
+      {% endblock main %}
+    </main>
+
+    {% include "components/footer.njk" %}
+    {% include "components/whatsapp-button.njk" %}
+
+    <!-- Simple Analytics -->
+    <script
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+      defer
+    ></script>
+  </body>
+</html>
