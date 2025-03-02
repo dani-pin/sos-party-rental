@@ -13,10 +13,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setQuietMode(true)
 
   // PASSTHROUGH COPIES
-  eleventyConfig.addPassthroughCopy('public/images/', {
-    // SVGs are handled by the minifier plugin
-    filter: '!*.svg',
-  })
+  eleventyConfig.addPassthroughCopy('public/images/')
   eleventyConfig.addPassthroughCopy('public/fonts/')
 
   // FILTERS/SHORTCODES
