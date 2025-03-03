@@ -547,7 +547,7 @@ button,
 
 /* Testimonial section */
 .testimonial-section {
-  background-image: url('../images/testimonial-bg.png');
+  background-image: url('../images/testimonial-bg.webp');
   background-repeat: no-repeat;
   background-size: cover;
 }
