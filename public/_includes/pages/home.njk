@@ -511,7 +511,8 @@ page_id: home
         <div class="gallery-info-section">
           <h2 class="h2">{{ gallery.heading }}</h2>
           <a href="{{ "page.gallery.link" | i18n }}" class="btn-secondary">
-            {{ i18n.see_more }}
+            <span aria-hidden>{{ i18n.see_more }}</span>
+            <span class="sr-only">{{ gallery.see_more_label }}</span>
           </a>
         </div>
         <div class="gallery-photos">
