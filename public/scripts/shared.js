@@ -51,3 +51,14 @@ for (const faq of faqs) {
     faq.classList.toggle('open')
   })
 }
+
+// Lazy-load background images
+window.addEventListener('load', () => {
+  const bgImgElements = document.querySelectorAll('[data-bg-img]')
+
+  setTimeout(() => {
+    for (const element of bgImgElements) {
+      element.style.setProperty('--bg-img', `url(${element.dataset.bgImg})`)
+    }
+  }, 0)
+})

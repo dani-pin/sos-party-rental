@@ -98,7 +98,7 @@
 
 /* Process section */
 .process-section-home-page {
-  background-image: url('../images/process-section-bg.webp');
+  background-image: var(--bg-img);
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
@@ -112,7 +112,7 @@
 
 /* Find us and Gallery Bg */
 .find-us-and-gallery-bg {
-  background-image: url('../images/leaves-gallery.webp');
+  background-image: var(--bg-img);
   background-repeat: repeat-y;
   background-size: 100% auto;
 }
@@ -172,7 +172,7 @@
 
 /* FAQs */
 .faq-section {
-  background-image: url('../images/faq-bg.webp');
+  background-image: var(--bg-img);
   background-repeat: repeat-y;
   background-size: 100% auto;
 }
