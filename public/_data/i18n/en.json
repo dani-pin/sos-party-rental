@@ -1,11 +1,11 @@
 {
-  "page.home.link": "/en/",
-  "page.our_story.link": "/en/our-story/",
-  "page.wedding_planner.link": "/en/wedding-planner-in-florida/",
-  "page.corporative_events.link": "/en/corporate-events-in-florida/",
-  "page.special_occasions.link": "/en/events-for-special-occasions/",
-  "page.product_rental.link": "/en/event-product-rentals-catalog/",
-  "page.gallery.link": "/en/photo-gallery-of-events-in-florida/",
+  "page.home.link": "/",
+  "page.our_story.link": "/our-story/",
+  "page.wedding_planner.link": "/wedding-planner-in-florida/",
+  "page.corporative_events.link": "/corporate-events-in-florida/",
+  "page.special_occasions.link": "/events-for-special-occasions/",
+  "page.product_rental.link": "/event-product-rentals-catalog/",
+  "page.gallery.link": "/photo-gallery-of-events-in-florida/",
   "usa_flag": "",
   "spain_flag": "Spanish flag, click to switch to Spanish language"
 }
