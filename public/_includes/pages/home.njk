@@ -50,6 +50,9 @@ page_id: home
     window.addEventListener('DOMContentLoaded', () => {
       AOS.init()
     })
+    window.addEventListener('load', () => {
+      AOS.refresh()
+    })
   </script>
 {% endblock head %}
 
