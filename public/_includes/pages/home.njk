@@ -547,13 +547,37 @@ page_id: home
         <div>
           <a href="{{ "page.wedding_planner.link" | i18n }}">
             <div class="img-services">
-              <img
-                class="border-radius-shadow-img"
-                src="/images/wedding-planner-img.png"
-                alt="{{ services.wedding_planner.img }}"
-                sizes="(min-width: 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
-                eleventy:widths="231,462,703,1406,auto"
-              />
+              <picture>
+                <source
+                  srcset="
+                    /images/wedding-planner-img-205w.webp 205w,
+                    /images/wedding-planner-img-233w.webp 233w,
+                    /images/wedding-planner-img-465w.webp 465w
+                  "
+                  media="(min-width: 1024px)"
+                  sizes="(min-width: 1163px) 231px, 20vw"
+                  width="205"
+                  height="347"
+                  type="image/webp"
+                />
+                <img
+                  class="border-radius-shadow-img"
+                  alt="{{ services.wedding_planner.img }}"
+                  src="/images/wedding-planner-img-m-231w.png"
+                  srcset="
+                    /images/wedding-planner-img-m-231w.webp 231w,
+                    /images/wedding-planner-img-m-348w.webp 348w,
+                    /images/wedding-planner-img-m-627w.webp 627w,
+                    /images/wedding-planner-img-m-767w.webp 767w
+                  "
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  width="231"
+                  height="154"
+                  loading="lazy"
+                  decoding="async"
+                  eleventy:ignore
+                />
+              </picture>
             </div>
             <h3 class="service-title h4">
               {{ services.wedding_planner.heading }}
@@ -574,13 +598,37 @@ page_id: home
         <div>
           <a href="{{ "page.corporative_events.link" | i18n }}">
             <div class="img-services">
-              <img
-                class="border-radius-shadow-img"
-                src="/images/corporate-events-img.png"
-                alt="{{ services.corporative_events.img }}"
-                sizes="(min-width: 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
-                eleventy:widths="231,462,703,1406,auto"
-              />
+              <picture>
+                <source
+                  srcset="
+                    /images/corporate-events-img-205w.webp 205w,
+                    /images/corporate-events-img-233w.webp 233w,
+                    /images/corporate-events-img-465w.webp 465w
+                  "
+                  media="(min-width: 1024px)"
+                  sizes="(min-width: 1163px) 231px, 20vw"
+                  width="205"
+                  height="347"
+                  type="image/webp"
+                />
+                <img
+                  class="border-radius-shadow-img"
+                  alt="{{ services.corporative_events.img }}"
+                  src="/images/corporate-events-img-m-231w.png"
+                  srcset="
+                    /images/corporate-events-img-m-231w.webp 231w,
+                    /images/corporate-events-img-m-348w.webp 348w,
+                    /images/corporate-events-img-m-627w.webp 627w,
+                    /images/corporate-events-img-m-767w.webp 767w
+                  "
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  width="231"
+                  height="154"
+                  loading="lazy"
+                  decoding="async"
+                  eleventy:ignore
+                />
+              </picture>
             </div>
             <h3 class="service-title h4">
               {{ services.corporative_events.heading }}
@@ -601,13 +649,37 @@ page_id: home
         <div>
           <a href="{{ "page.special_occasions.link" | i18n }}">
             <div class="img-services">
-              <img
-                class="border-radius-shadow-img"
-                src="/images/special-ocassion-img.png"
-                alt="{{ services.special_occasions.img }}"
-                sizes="(min-width: 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
-                eleventy:widths="231,462,703,1406,auto"
-              />
+              <picture>
+                <source
+                  srcset="
+                    /images/special-ocassion-img-205w.webp 205w,
+                    /images/special-ocassion-img-233w.webp 233w,
+                    /images/special-ocassion-img-465w.webp 465w
+                  "
+                  media="(min-width: 1024px)"
+                  sizes="(min-width: 1163px) 231px, 20vw"
+                  width="205"
+                  height="347"
+                  type="image/webp"
+                />
+                <img
+                  class="border-radius-shadow-img"
+                  alt="{{ services.special_occasions.img }}"
+                  src="/images/special-ocassion-img-m-231w.png"
+                  srcset="
+                    /images/special-ocassion-img-m-231w.webp 231w,
+                    /images/special-ocassion-img-m-348w.webp 348w,
+                    /images/special-ocassion-img-m-627w.webp 627w,
+                    /images/special-ocassion-img-m-767w.webp 767w
+                  "
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  width="231"
+                  height="154"
+                  loading="lazy"
+                  decoding="async"
+                  eleventy:ignore
+                />
+              </picture>
             </div>
             <h3 class="service-title h4">
               {{ services.special_occasions.heading }}
@@ -628,13 +700,37 @@ page_id: home
         <div>
           <a href="{{ "page.product_rental.link" | i18n }}">
             <div class="img-services">
-              <img
-                class="border-radius-shadow-img"
-                src="/images/rental-img.png"
-                alt="{{ services.product_rental.img }}"
-                sizes="(min-width: 1163px) 231px, (min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
-                eleventy:widths="231,462,703,1406,auto"
-              />
+              <picture>
+                <source
+                  srcset="
+                    /images/rental-img-205w.webp 205w,
+                    /images/rental-img-233w.webp 233w,
+                    /images/rental-img-465w.webp 465w
+                  "
+                  media="(min-width: 1024px)"
+                  sizes="(min-width: 1163px) 231px, 20vw"
+                  width="205"
+                  height="347"
+                  type="image/webp"
+                />
+                <img
+                  class="border-radius-shadow-img"
+                  alt="{{ services.product_rental.img }}"
+                  src="/images/rental-img-m-231w.png"
+                  srcset="
+                    /images/rental-img-m-231w.webp 231w,
+                    /images/rental-img-m-348w.webp 348w,
+                    /images/rental-img-m-627w.webp 627w,
+                    /images/rental-img-m-767w.webp 767w
+                  "
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  width="231"
+                  height="154"
+                  loading="lazy"
+                  decoding="async"
+                  eleventy:ignore
+                />
+              </picture>
             </div>
             <h3 class="service-title h4">
               {{ services.product_rental.heading }}
