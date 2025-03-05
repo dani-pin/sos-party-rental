@@ -1,13 +1,18 @@
 {
   "lang": "en",
   "nav": {
-    "logo": "SOS Party Rental Logo",
+    "logo": "Company Logo",
     "services": "Services",
     "catalog": "Catalog",
     "gallery": "Gallery",
     "our_story": "Our Story",
     "contact": "Contact",
     "cta": "Let's Talk!"
+  },
+  "footer": {
+    "logo": "Company Logo",
+    "facebook": "Visit SOS Party Rental on Facebook",
+    "instagram":"Visit SOS Party Rental on Instagram"
   },
   "i18n": {
     "monday": "Monday",
