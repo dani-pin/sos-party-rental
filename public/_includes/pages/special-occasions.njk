@@ -2,281 +2,224 @@
 page_id: special_occasions
 ---
 
-<!DOCTYPE html>
-<html lang="{{ lang }}">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="{{ meta.title }}" />
-    <meta name="description" content="{{ meta.description }}" />
-    <meta name="keywords" content="{{ meta.keywords }}" />
-    <title>{{ title }}</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+{% extends "layouts/base.njk" %}
 
-    <!-- Font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+{% block head %}
+  {% include "components/swiper.njk" %}
+  {% include "components/aos.njk" %}
+{% endblock head %}
 
-    <!-- Swiper -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-      defer
-    ></script>
+{% block assets %}
+  <link rel="stylesheet" href="/styles/special-occasion.css" />
+{% endblock assets %}
 
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        AOS.init()
-      })
-    </script>
+{% block content %}
+  <main>
+    <section class="events-hero">
+      <img
+        src="/images/special-ocassion-events-hero-img.png"
+        alt="{{ hero.img }}"
+        class="events-hero-banner"
+      />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/styles/shared.css" />
-    <link rel="stylesheet" href="/styles/special-occasion.css" />
+      <div class="events-hero-content">
+        <h1 class="h1" data-aos="fade-up" data-aos-offset="0">
+          {{ hero.heading }}
+        </h1>
+        <p
+          class="subheading events-hero-description"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-offset="0"
+        >
+          {{ hero.subheading }}
+        </p>
+        <a
+          href="https://api.whatsapp.com/send?phone=19543268989"
+          target="_blank"
+          class="btn-primary"
+          data-aos="fade-up"
+          data-aos-delay="600"
+          data-aos-offset="0"
+          >{{ hero.cta }}</a
+        >
+      </div>
+    </section>
 
-    <!-- JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-      defer
-    ></script>
-    <script src="/scripts/shared.js" defer></script>
-  </head>
-
-  <body>
-    {% include "components/nav.njk" %}
-
-    <main>
-      <section class="events-hero">
-        <img
-          src="/images/special-ocassion-events-hero-img.png"
-          alt="{{ hero.img }}"
-          class="events-hero-banner"
-        />
-
-        <div class="events-hero-content">
-          <h1 class="h1" data-aos="fade-up" data-aos-offset="0">
-            {{ hero.heading }}
-          </h1>
-          <p
-            class="subheading events-hero-description"
-            data-aos="fade-up"
-            data-aos-delay="300"
-            data-aos-offset="0"
-          >
-            {{ hero.subheading }}
-          </p>
-          <a
-            href="https://api.whatsapp.com/send?phone=19543268989"
-            target="_blank"
-            class="btn-primary"
-            data-aos="fade-up"
-            data-aos-delay="600"
-            data-aos-offset="0"
-            >{{ hero.cta }}</a
-          >
-        </div>
-      </section>
-
-      <section class="section event-types-section">
-        <div class="container event-types-container">
-          <div class="event-types-list-container">
-            <h2 class="h4 event-types-list-title">{{ event_types.heading }}</h2>
-            <ul class="event-types-list">
-              {% for type in event_types.types %}
-                <li>{{ type }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div>
-            <img
-              class="border-radius-shadow-img event-types-img "
-              style="object-position: center 57%;"
-              src="/images/baby-shower-party.png"
-              alt="{{ event_types.img }}"
-            />
-          </div>
-        </div>
-      </section>
-
-      <div class="special-occasion-events-services-details">
-        <section class="section" style="overflow-x: hidden;">
-          <div class="container">
-            <div class="section-header">
-              <div class="heading-line"></div>
-              <p class="subheading section-subheading-title">
-                {{ services_details.subheading }}
-              </p>
-              <h2 class="h2">{{ services_details.heading }}</h2>
-            </div>
-
-            {% for service in services_details.services %}
-              <div
-                class="event-service-container
-                    {% if service.fade == 'fade-right' %}
-                  event-service-container-reverse
-                {% endif %}
-                    "
-                data-aos="{{ service.fade }}"
-                {% if service.offset %}
-                  data-aos-offset="{{ service.offset }}"
-                {% endif %}
-
-                {% if service.placement %}
-                  data-aos-anchor-placement=" {{ service.placement }}"
-                {% endif %}
-                data-aos-duration="900"
-              >
-                <div class="event-img-container">
-                  <img
-                    class="border-radius-shadow-img service-mobile-img
-                            {% if service.fade == 'fade-left' %}
-                      ml-auto
-                    {% endif %}
-                            "
-                    style="object-position: {{ service.position }};"
-                    src="{{ service.src }}"
-                    alt="{{ service.alt }}"
-                  />
-                </div>
-
-                <div>
-                  <div class="step-number event-step-number">
-                    {{ service.number }}
-                  </div>
-                  <h3 class="h4 event-step-title">{{ service.heading }}</h3>
-                  {% for description in service.description %}
-                    <p class="subheading event-step-description">
-                      {% if description.bold %}
-                        <strong>{{ description.bold }} </strong>
-                      {% endif %}
-                      {{ description.paragraph }}
-                    </p>
-                  {% endfor %}
-                </div>
-              </div>
+    <section class="section event-types-section">
+      <div class="container event-types-container">
+        <div class="event-types-list-container">
+          <h2 class="h4 event-types-list-title">{{ event_types.heading }}</h2>
+          <ul class="event-types-list">
+            {% for type in event_types.types %}
+              <li>{{ type }}</li>
             {% endfor %}
-          </div>
-        </section>
+          </ul>
+        </div>
+        <div>
+          <img
+            class="border-radius-shadow-img event-types-img "
+            style="object-position: center 57%;"
+            src="/images/baby-shower-party.png"
+            alt="{{ event_types.img }}"
+          />
+        </div>
+      </div>
+    </section>
 
-        <section class="section process-section">
-          <div class="container process-container">
-            <div class="process-img-container">
+    <div class="special-occasion-events-services-details">
+      <section class="section" style="overflow-x: hidden;">
+        <div class="container">
+          <div class="section-header">
+            <div class="heading-line"></div>
+            <p class="subheading section-subheading-title">
+              {{ services_details.subheading }}
+            </p>
+            <h2 class="h2">{{ services_details.heading }}</h2>
+          </div>
+
+          {% for service in services_details.services %}
+            <div
+              class="event-service-container
+                {% if service.fade == 'fade-right' %}
+                event-service-container-reverse
+              {% endif %}
+                "
+              data-aos="{{ service.fade }}"
+              {% if service.offset %}
+                data-aos-offset="{{ service.offset }}"
+              {% endif %}
+
+              {% if service.placement %}
+                data-aos-anchor-placement=" {{ service.placement }}"
+              {% endif %}
+              data-aos-duration="900"
+            >
+              <div class="event-img-container">
+                <img
+                  class="border-radius-shadow-img service-mobile-img
+                        {% if service.fade == 'fade-left' %}
+                    ml-auto
+                  {% endif %}
+                        "
+                  style="object-position: {{ service.position }};"
+                  src="{{ service.src }}"
+                  alt="{{ service.alt }}"
+                />
+              </div>
+
+              <div>
+                <div class="step-number event-step-number">
+                  {{ service.number }}
+                </div>
+                <h3 class="h4 event-step-title">{{ service.heading }}</h3>
+                {% for description in service.description %}
+                  <p class="subheading event-step-description">
+                    {% if description.bold %}
+                      <strong>{{ description.bold }} </strong>
+                    {% endif %}
+                    {{ description.paragraph }}
+                  </p>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="section process-section">
+        <div class="container process-container">
+          <div class="process-img-container">
+            <img
+              class="border-radius-shadow-img"
+              src="/images/special-events-process-img-1.png"
+              alt="{{ process.img1 }}"
+            />
+            <div class="overlapping-img">
               <img
                 class="border-radius-shadow-img"
-                src="/images/special-events-process-img-1.png"
-                alt="{{ process.img1 }}"
+                src="/images/special-events-process-img-2.png"
+                alt="{{ process.img2 }}"
               />
-              <div class="overlapping-img">
-                <img
-                  class="border-radius-shadow-img"
-                  src="/images/special-events-process-img-2.png"
-                  alt="{{ process.img2 }}"
-                />
-              </div>
-            </div>
-
-            <div class="process-info">
-              <p class="subheading section-subheading-title">
-                {{ process.subheading }}
-              </p>
-              <h2 class="h2">{{ process.heading }}</h2>
-              <div class="process-steps">
-                <div class="step-1">
-                  <div class="step-number process-step-number">01</div>
-                  <div class="process-step-description step-one">
-                    {{ process.step1 }}
-                  </div>
-                </div>
-
-                <div class="step-2">
-                  <div class="step-number process-step-number">02</div>
-                  <div class="process-step-description">
-                    {{ process.step2 }}
-                  </div>
-                </div>
-
-                <div class="step-3">
-                  <div class="step-number process-step-number">03</div>
-                  <div class="process-step-description">
-                    {{ process.step3 }}
-                  </div>
-                </div>
-              </div>
-              <p class="subheading process-subheading-description">
-                {{ process.description }}
-              </p>
-              <a
-                href="https://api.whatsapp.com/send?phone=19543268989"
-                target="_blank"
-                class="btn-primary"
-              >
-                {{ process.cta }}
-              </a>
             </div>
           </div>
-        </section>
-      </div>
 
-      {% include "components/testimonials.njk" %}
+          <div class="process-info">
+            <p class="subheading section-subheading-title">
+              {{ process.subheading }}
+            </p>
+            <h2 class="h2">{{ process.heading }}</h2>
+            <div class="process-steps">
+              <div class="step-1">
+                <div class="step-number process-step-number">01</div>
+                <div class="process-step-description step-one">
+                  {{ process.step1 }}
+                </div>
+              </div>
 
-      <section class="section event-gallery-section">
-        <div class="container">
-          <div class="event-gallery-header">
-            <div>
-              <p class="subheading section-subheading-title">
-                {{ gallery.subheading }}
-              </p>
-              <h2 class="h2">{{ gallery.heading }}</h2>
+              <div class="step-2">
+                <div class="step-number process-step-number">02</div>
+                <div class="process-step-description">{{ process.step2 }}</div>
+              </div>
+
+              <div class="step-3">
+                <div class="step-number process-step-number">03</div>
+                <div class="process-step-description">{{ process.step3 }}</div>
+              </div>
             </div>
+            <p class="subheading process-subheading-description">
+              {{ process.description }}
+            </p>
             <a
-              href="./galeria-de-fotos-de-eventos-en-florida.html#special-occasions"
-              class="btn-secondary"
+              href="https://api.whatsapp.com/send?phone=19543268989"
+              target="_blank"
+              class="btn-primary"
             >
-              {{ gallery.cta }}
+              {{ process.cta }}
             </a>
-          </div>
-
-          <div class="event-gallery-grid">
-            {% for img in gallery.imgs %}
-              <div
-                class="event-gallery-img-container border-radius-shadow-img"
-                style="grid-area: {{ img.grid_area }}"
-                data-aos="zoom-in-up"
-                data-aos-delay="{{ img.delay }}"
-                data-aos-duration="500"
-                data-aos-offset="0"
-              >
-                <img
-                  class="event-gallery-img"
-                  src="{{ img.src }}"
-                  alt="{{ img.alt }} "
-                />
-              </div>
-            {% endfor %}
           </div>
         </div>
       </section>
-    </main>
+    </div>
 
-    {% include "components/footer.njk" %}
-    {% include "components/whatsapp-button.njk" %}
-    {% include "components/simple-analytics.njk" %}
-  </body>
-</html>
+    {% include "components/testimonials.njk" %}
+
+    <section class="section event-gallery-section">
+      <div class="container">
+        <div class="event-gallery-header">
+          <div>
+            <p class="subheading section-subheading-title">
+              {{ gallery.subheading }}
+            </p>
+            <h2 class="h2">{{ gallery.heading }}</h2>
+          </div>
+          <a
+            href="./galeria-de-fotos-de-eventos-en-florida.html#special-occasions"
+            class="btn-secondary"
+          >
+            {{ gallery.cta }}
+          </a>
+        </div>
+
+        <div class="event-gallery-grid">
+          {% for img in gallery.imgs %}
+            <div
+              class="event-gallery-img-container border-radius-shadow-img"
+              style="grid-area: {{ img.grid_area }}"
+              data-aos="zoom-in-up"
+              data-aos-delay="{{ img.delay }}"
+              data-aos-duration="500"
+              data-aos-offset="0"
+            >
+              <img
+                class="event-gallery-img"
+                src="{{ img.src }}"
+                alt="{{ img.alt }} "
+              />
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock content %}

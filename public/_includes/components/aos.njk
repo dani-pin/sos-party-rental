@@ -1,0 +1,22 @@
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script>
+  // initialise aos (play animations) when the dom content has finished loading
+  // (which happens when the browser has finished reading the html file)
+  window.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      // once: true tells aos to play all animations once by default
+      // (so they won't replay when you scroll back up)
+      once: true,
+    })
+  })
+  // this tells aos to play animations for any elements that were not yet loaded
+  // when aos first initialised. for example, if an image takes a while to load,
+  // then it might not be on the page when the dom content has finished loading and
+  // aos is first initialised, so here we catch all those elements and play their
+  // animations
+  window.addEventListener('load', () => {
+    AOS.refresh()
+  })
+</script>

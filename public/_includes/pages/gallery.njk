@@ -2,88 +2,56 @@
 page_id: gallery
 ---
 
-<!DOCTYPE html>
-<html lang="{{ lang }}">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="{{ meta.title }}" />
-    <meta name="description" content="{{ meta.description }}" />
-    <meta name="keywords" content="{{ meta.keywords }}" />
-    <title>{{ title }}</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+{% extends "layouts/base.njk" %}
 
-    <!-- Font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+{% block head %}
+  <script src="/scripts/fslightbox.js" defer></script>
+{% endblock head %}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/styles/shared.css" />
-    <link rel="stylesheet" href="/styles/gallery.css" />
+{% block assets %}
+  <link rel="stylesheet" href="/styles/gallery.css" />
+  <script src="/scripts/gallery.js" defer></script>
+{% endblock assets %}
 
-    <!-- JS -->
-    <script src="/scripts/fslightbox.js" defer></script>
-    <script src="/scripts/shared.js" defer></script>
-    <script src="/scripts/gallery.js" defer></script>
-  </head>
+{% block content %}
+  <main class="gallery-page-bg-leaves">
+    <section class="section gallery-page-section">
+      <div class="container">
+        <h1 class="h1">{{ heading }}</h1>
+        <div class="subheading section-subheading-title gallery-subheading">
+          {{ subheading }}
+        </div>
 
-  <body>
-    {% include "components/nav.njk" %}
-
-    <main class="gallery-page-bg-leaves">
-      <section class="section gallery-page-section">
-        <div class="container">
-          <h1 class="h1">{{ heading }}</h1>
-          <div class="subheading section-subheading-title gallery-subheading">
-            {{ subheading }}
-          </div>
-
-          <div class="gallery-tabs">
-            {% for tab in tabs %}
-              <div
-                data-target="#{{ tab.id }}"
-                class="gallery-tab {{ 'active' if tab.active }}"
-              >
-                {{ tab.label }}
-              </div>
-            {% endfor %}
-          </div>
-
+        <div class="gallery-tabs">
           {% for tab in tabs %}
             <div
-              id="{{ tab.id }}"
-              class="gallery-images {{ 'active' if tab.active }}"
+              data-target="#{{ tab.id }}"
+              class="gallery-tab {{ 'active' if tab.active }}"
             >
-              {% for image in tab.images %}
-                <div class="gallery-img-container">
-                  <a data-fslightbox="gallery" href="{{ image.url }}">
-                    <img
-                      class="gallery-img border-radius-shadow-img"
-                      src="{{ image.url }}"
-                      alt="{{ image.alt }}"
-                    />
-                  </a>
-                </div>
-              {% endfor %}
+              {{ tab.label }}
             </div>
           {% endfor %}
         </div>
-      </section>
-    </main>
 
-    {% include "components/footer.njk" %}
-    {% include "components/whatsapp-button.njk" %}
-    {% include "components/simple-analytics.njk" %}
-  </body>
-</html>
+        {% for tab in tabs %}
+          <div
+            id="{{ tab.id }}"
+            class="gallery-images {{ 'active' if tab.active }}"
+          >
+            {% for image in tab.images %}
+              <div class="gallery-img-container">
+                <a data-fslightbox="gallery" href="{{ image.url }}">
+                  <img
+                    class="gallery-img border-radius-shadow-img"
+                    src="{{ image.url }}"
+                    alt="{{ image.alt }}"
+                  />
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+{% endblock content %}

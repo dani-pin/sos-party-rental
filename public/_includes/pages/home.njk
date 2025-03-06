@@ -26,45 +26,8 @@ page_id: home
 {% endblock preloads %}
 
 {% block head %}
-  <!-- Swiper -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    media="print"
-    onload="this.media='all'; this.onload=null;"
-  />
-  <script
-    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-    defer
-  ></script>
-
-  <!-- AOS -->
-  <link
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-    rel="stylesheet"
-    media="print"
-    onload="this.media='all'; this.onload=null;"
-  />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-  <script>
-    // initialise aos (play animations) when the dom content has finished loading
-    // (which happens when the browser has finished reading the html file)
-    window.addEventListener('DOMContentLoaded', () => {
-      AOS.init({
-        // once: true tells aos to play all animations once by default
-        // (so they won't replay when you scroll back up)
-        once: true,
-      })
-    })
-    // this tells aos to play animations for any elements that were not yet loaded
-    // when aos first initialised. for example, if an image takes a while to load,
-    // then it might not be on the page when the dom content has finished loading and
-    // aos is first initialised, so here we catch all those elements and play their
-    // animations
-    window.addEventListener('load', () => {
-      AOS.refresh()
-    })
-  </script>
+  {% include "components/swiper.njk" %}
+  {% include "components/aos.njk" %}
 {% endblock head %}
 
 {% block assets %}
@@ -317,637 +280,645 @@ page_id: home
   />
 {% endblock assets %}
 
-{% block main %}
-  <section class="hero">
-    <div class="hero-balls">
-      <div class="hero-ball-container hero-ball-1-container">
-        <img
-          style="width: 187px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 480px) 0px, 187px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-2-container">
-        <img
-          style="width: 250px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 830px) 0px, 250px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-3-container">
-        <img
-          style="width: 180px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 1530px) 0px, 180px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-4-container">
-        <img
-          style="width: 90px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 370px) 0px, 90px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-5-container">
-        <img
-          style="width: 180px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="180px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-6-container">
-        <img
-          style="width: 90px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 370px) 0px, 90px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-7-container">
-        <img
-          style="width: 160px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 830px) 0px, 160px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-8-container">
-        <img
-          style="width: 180px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 1530px) 0px, 180px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-9-container">
-        <img
-          style="width: 180px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 480px) 0px, 180px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-      <div class="hero-ball-container hero-ball-10-container">
-        <img
-          style="width: 140px"
-          alt="{{ hero.img }}"
-          src="/images/disco-ball-360w.webp"
-          width="360"
-          height="329"
-          srcset="
-            /images/disco-ball-360w.webp 360w,
-            /images/disco-ball-500w.webp 500w
-          "
-          sizes="(max-width: 1945px) 0px, 140px"
-          loading="eager"
-          decoding="async"
-          eleventy:ignore
-        />
-        {% include "components/disco-ball-line.njk" %}
-      </div>
-    </div>
-    <div class="container hero-info">
-      <h1 class="h1 hero-heading" data-aos="fade-up" data-aos-offset="-1000000">
-        {{ hero.heading }}
-      </h1>
-      <p
-        class="subheading hero-subheading"
-        data-aos="fade-up"
-        data-aos-delay="300"
-        data-aos-offset="-1000000"
-      >
-        {{ hero.subheading }}
-      </p>
-      <a
-        href="https://api.whatsapp.com/send?phone=19543268989"
-        target="_blank"
-        class="btn-primary"
-        data-aos="fade-up"
-        data-aos-delay="600"
-        data-aos-offset="-1000000"
-      >
-        {{ hero.cta }}
-      </a>
-    </div>
-  </section>
-
-  <section class="section experience-section">
-    <div class="container experience-info-container">
-      <div class="experience-info" data-aos="zoom-in">
-        <p class="h2">+726</p>
-        <p class="subheading experience-info-subheading">
-          {{ experience.clients }}
-        </p>
-      </div>
-
-      <div class="experience-info" data-aos="zoom-in" data-aos-delay="300">
-        <p class="h2">19</p>
-        <p class="subheading experience-info-subheading">
-          {{ experience.years }}
-        </p>
-      </div>
-
-      <div class="experience-info" data-aos="zoom-in" data-aos-delay="600">
-        <p class="h2">+1000</p>
-        <p class="subheading experience-info-subheading">
-          {{ experience.events }}
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="container section services-section">
-    <div class="services-container">
-      <p class="subheading section-subheading-title">
-        {{ services.subheading }}
-      </p>
-      <h2 class="h2">{{ services.heading }}</h2>
-      <div class="services">
-        <div>
-          <a href="{{ "page.wedding_planner.link" | i18n }}">
-            <div class="img-services">
-              <picture>
-                <source
-                  srcset="
-                    /images/wedding-planner-img-205w.webp 205w,
-                    /images/wedding-planner-img-233w.webp 233w,
-                    /images/wedding-planner-img-465w.webp 465w
-                  "
-                  media="(min-width: 1024px)"
-                  sizes="(min-width: 1163px) 231px, 20vw"
-                  width="205"
-                  height="347"
-                  type="image/webp"
-                />
-                <img
-                  class="border-radius-shadow-img"
-                  alt="{{ services.wedding_planner.img }}"
-                  src="/images/wedding-planner-img-m-231w.png"
-                  srcset="
-                    /images/wedding-planner-img-m-231w.webp 231w,
-                    /images/wedding-planner-img-m-348w.webp 348w,
-                    /images/wedding-planner-img-m-627w.webp 627w,
-                    /images/wedding-planner-img-m-767w.webp 767w
-                  "
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  width="231"
-                  height="154"
-                  loading="lazy"
-                  decoding="async"
-                  eleventy:ignore
-                />
-              </picture>
-            </div>
-            <h3 class="service-title h4">
-              {{ services.wedding_planner.heading }}
-            </h3>
-          </a>
-          <p class="subheading service-subheading-description">
-            {{ services.wedding_planner.description }}
-          </p>
-          <a
-            href="{{ "page.wedding_planner.link" | i18n }}"
-            class="service-link"
-          >
-            {{ i18n.see_more }}
-            <span> &rarr;</span>
-          </a>
-        </div>
-
-        <div>
-          <a href="{{ "page.corporative_events.link" | i18n }}">
-            <div class="img-services">
-              <picture>
-                <source
-                  srcset="
-                    /images/corporate-events-img-205w.webp 205w,
-                    /images/corporate-events-img-233w.webp 233w,
-                    /images/corporate-events-img-465w.webp 465w
-                  "
-                  media="(min-width: 1024px)"
-                  sizes="(min-width: 1163px) 231px, 20vw"
-                  width="205"
-                  height="347"
-                  type="image/webp"
-                />
-                <img
-                  class="border-radius-shadow-img"
-                  alt="{{ services.corporative_events.img }}"
-                  src="/images/corporate-events-img-m-231w.png"
-                  srcset="
-                    /images/corporate-events-img-m-231w.webp 231w,
-                    /images/corporate-events-img-m-348w.webp 348w,
-                    /images/corporate-events-img-m-627w.webp 627w,
-                    /images/corporate-events-img-m-767w.webp 767w
-                  "
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  width="231"
-                  height="154"
-                  loading="lazy"
-                  decoding="async"
-                  eleventy:ignore
-                />
-              </picture>
-            </div>
-            <h3 class="service-title h4">
-              {{ services.corporative_events.heading }}
-            </h3>
-          </a>
-          <p class="subheading service-subheading-description">
-            {{ services.corporative_events.description }}
-          </p>
-          <a
-            href="{{ "page.corporative_events.link" | i18n }}"
-            class="service-link"
-          >
-            {{ i18n.see_more }}
-            <span> &rarr;</span>
-          </a>
-        </div>
-
-        <div>
-          <a href="{{ "page.special_occasions.link" | i18n }}">
-            <div class="img-services">
-              <picture>
-                <source
-                  srcset="
-                    /images/special-ocassion-img-205w.webp 205w,
-                    /images/special-ocassion-img-233w.webp 233w,
-                    /images/special-ocassion-img-465w.webp 465w
-                  "
-                  media="(min-width: 1024px)"
-                  sizes="(min-width: 1163px) 231px, 20vw"
-                  width="205"
-                  height="347"
-                  type="image/webp"
-                />
-                <img
-                  class="border-radius-shadow-img"
-                  alt="{{ services.special_occasions.img }}"
-                  src="/images/special-ocassion-img-m-231w.png"
-                  srcset="
-                    /images/special-ocassion-img-m-231w.webp 231w,
-                    /images/special-ocassion-img-m-348w.webp 348w,
-                    /images/special-ocassion-img-m-627w.webp 627w,
-                    /images/special-ocassion-img-m-767w.webp 767w
-                  "
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  width="231"
-                  height="154"
-                  loading="lazy"
-                  decoding="async"
-                  eleventy:ignore
-                />
-              </picture>
-            </div>
-            <h3 class="service-title h4">
-              {{ services.special_occasions.heading }}
-            </h3>
-          </a>
-          <p class="subheading service-subheading-description">
-            {{ services.special_occasions.description }}
-          </p>
-          <a
-            href="{{ "page.special_occasions.link" | i18n }}"
-            class="service-link"
-          >
-            {{ i18n.see_more }}
-            <span> &rarr;</span>
-          </a>
-        </div>
-
-        <div>
-          <a href="{{ "page.product_rental.link" | i18n }}">
-            <div class="img-services">
-              <picture>
-                <source
-                  srcset="
-                    /images/rental-img-205w.webp 205w,
-                    /images/rental-img-233w.webp 233w,
-                    /images/rental-img-465w.webp 465w
-                  "
-                  media="(min-width: 1024px)"
-                  sizes="(min-width: 1163px) 231px, 20vw"
-                  width="205"
-                  height="347"
-                  type="image/webp"
-                />
-                <img
-                  class="border-radius-shadow-img"
-                  alt="{{ services.product_rental.img }}"
-                  src="/images/rental-img-m-231w.png"
-                  srcset="
-                    /images/rental-img-m-231w.webp 231w,
-                    /images/rental-img-m-348w.webp 348w,
-                    /images/rental-img-m-627w.webp 627w,
-                    /images/rental-img-m-767w.webp 767w
-                  "
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  width="231"
-                  height="154"
-                  loading="lazy"
-                  decoding="async"
-                  eleventy:ignore
-                />
-              </picture>
-            </div>
-            <h3 class="service-title h4">
-              {{ services.product_rental.heading }}
-            </h3>
-          </a>
-          <p class="subheading service-subheading-description">
-            {{ services.product_rental.description }}
-          </p>
-          <a
-            href="{{ "page.product_rental.link" | i18n }}"
-            class="service-link"
-          >
-            {{ i18n.see_catalog }}
-            <span> &rarr;</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="section process-section-home-page"
-    data-bg-img="{{ "/images/process-section-bg.webp" | url }}"
-  >
-    <div class="container process-container">
-      <div class="process-img-container">
-        <img
-          class="border-radius-shadow-img"
-          src="/images/kiss-wedding.png"
-          alt="{{ process.img1 }}"
-          sizes="(min-width: 1163px) 450px, (min-width: 1008px) 40vw, (min-width: 532px) 350px, 65vw"
-          eleventy:widths="201,450,700,900,auto"
-        />
-        <div class="overlapping-img">
+{% block content %}
+  <main>
+    <section class="hero">
+      <div class="hero-balls">
+        <div class="hero-ball-container hero-ball-1-container">
           <img
-            class="border-radius-shadow-img"
-            src="/images/ceremony-room.png"
-            alt="{{ process.img2 }}"
-            sizes="(min-width: 1163px) 228px, (min-width: 1008px) 20vw, (min-width: 532px) 177px, 35vw"
-            eleventy:widths="102,227,454,auto"
+            style="width: 187px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 480px) 0px, 187px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
           />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-2-container">
+          <img
+            style="width: 250px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 830px) 0px, 250px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-3-container">
+          <img
+            style="width: 180px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 1530px) 0px, 180px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-4-container">
+          <img
+            style="width: 90px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 370px) 0px, 90px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-5-container">
+          <img
+            style="width: 180px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="180px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-6-container">
+          <img
+            style="width: 90px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 370px) 0px, 90px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-7-container">
+          <img
+            style="width: 160px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 830px) 0px, 160px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-8-container">
+          <img
+            style="width: 180px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 1530px) 0px, 180px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-9-container">
+          <img
+            style="width: 180px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 480px) 0px, 180px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
+        </div>
+        <div class="hero-ball-container hero-ball-10-container">
+          <img
+            style="width: 140px"
+            alt="{{ hero.img }}"
+            src="/images/disco-ball-360w.webp"
+            width="360"
+            height="329"
+            srcset="
+              /images/disco-ball-360w.webp 360w,
+              /images/disco-ball-500w.webp 500w
+            "
+            sizes="(max-width: 1945px) 0px, 140px"
+            loading="eager"
+            decoding="async"
+            eleventy:ignore
+          />
+          {% include "components/disco-ball-line.njk" %}
         </div>
       </div>
-
-      <div class="process-info" data-aos="fade-left" data-aos-duration="900">
-        <p class="subheading section-subheading-title">
-          {{ process.subheading }}
-        </p>
-        <h2 class="h2">{{ process.heading }}</h2>
-        <div class="process-steps">
-          <div class="step-1">
-            <div class="step-number process-step-number">01</div>
-            <div class="process-step-description step-one">
-              {{ process.step1 }}
-            </div>
-          </div>
-
-          <div class="step-2">
-            <div class="step-number process-step-number">02</div>
-            <div class="process-step-description">{{ process.step2 }}</div>
-          </div>
-
-          <div class="step-3">
-            <div class="step-number process-step-number">03</div>
-            <div class="process-step-description">{{ process.step3 }}</div>
-          </div>
-        </div>
-        <p class="subheading process-subheading-description">
-          {{ process.description }}
+      <div class="container hero-info">
+        <h1
+          class="h1 hero-heading"
+          data-aos="fade-up"
+          data-aos-offset="-1000000"
+        >
+          {{ hero.heading }}
+        </h1>
+        <p
+          class="subheading hero-subheading"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-offset="-1000000"
+        >
+          {{ hero.subheading }}
         </p>
         <a
           href="https://api.whatsapp.com/send?phone=19543268989"
           target="_blank"
           class="btn-primary"
+          data-aos="fade-up"
+          data-aos-delay="600"
+          data-aos-offset="-1000000"
         >
-          {{ process.cta }}
+          {{ hero.cta }}
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  {% include "components/testimonials.njk" %}
-
-  <div
-    class="find-us-and-gallery-bg"
-    data-bg-img="{{ "/images/leaves-gallery.webp" | url }}"
-  >
-    <section class="section gallery-section">
-      <div class="container">
-        <div class="gallery-info-section">
-          <h2 class="h2">{{ gallery.heading }}</h2>
-          <a href="{{ "page.gallery.link" | i18n }}" class="btn-secondary">
-            <span aria-hidden>{{ i18n.see_more }}</span>
-            <span class="sr-only">{{ gallery.see_more_label }}</span>
-          </a>
+    <section class="section experience-section">
+      <div class="container experience-info-container">
+        <div class="experience-info" data-aos="zoom-in">
+          <p class="h2">+726</p>
+          <p class="subheading experience-info-subheading">
+            {{ experience.clients }}
+          </p>
         </div>
-        <div class="gallery-photos">
-          <div
-            data-aos="zoom-in-up"
-            data-aos-duration="600"
-            data-aos-offset="0"
-          >
-            <img
-              class="border-radius-shadow-img"
-              src="/images/gallery-photo-1.png"
-              alt="{{ gallery.img1 }}"
-              sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
-              eleventy:widths="288,568,1136,auto"
-            />
+
+        <div class="experience-info" data-aos="zoom-in" data-aos-delay="300">
+          <p class="h2">19</p>
+          <p class="subheading experience-info-subheading">
+            {{ experience.years }}
+          </p>
+        </div>
+
+        <div class="experience-info" data-aos="zoom-in" data-aos-delay="600">
+          <p class="h2">+1000</p>
+          <p class="subheading experience-info-subheading">
+            {{ experience.events }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="container section services-section">
+      <div class="services-container">
+        <p class="subheading section-subheading-title">
+          {{ services.subheading }}
+        </p>
+        <h2 class="h2">{{ services.heading }}</h2>
+        <div class="services">
+          <div>
+            <a href="{{ "page.wedding_planner.link" | i18n }}">
+              <div class="img-services">
+                <picture>
+                  <source
+                    srcset="
+                      /images/wedding-planner-img-205w.webp 205w,
+                      /images/wedding-planner-img-233w.webp 233w,
+                      /images/wedding-planner-img-465w.webp 465w
+                    "
+                    media="(min-width: 1024px)"
+                    sizes="(min-width: 1163px) 231px, 20vw"
+                    width="205"
+                    height="347"
+                    type="image/webp"
+                  />
+                  <img
+                    class="border-radius-shadow-img"
+                    alt="{{ services.wedding_planner.img }}"
+                    src="/images/wedding-planner-img-m-231w.png"
+                    srcset="
+                      /images/wedding-planner-img-m-231w.webp 231w,
+                      /images/wedding-planner-img-m-348w.webp 348w,
+                      /images/wedding-planner-img-m-627w.webp 627w,
+                      /images/wedding-planner-img-m-767w.webp 767w
+                    "
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    width="231"
+                    height="154"
+                    loading="lazy"
+                    decoding="async"
+                    eleventy:ignore
+                  />
+                </picture>
+              </div>
+              <h3 class="service-title h4">
+                {{ services.wedding_planner.heading }}
+              </h3>
+            </a>
+            <p class="subheading service-subheading-description">
+              {{ services.wedding_planner.description }}
+            </p>
+            <a
+              href="{{ "page.wedding_planner.link" | i18n }}"
+              class="service-link"
+            >
+              {{ i18n.see_more }}
+              <span> &rarr;</span>
+            </a>
           </div>
-          <div
-            data-aos="zoom-in-up"
-            data-aos-delay="300"
-            data-aos-duration="600"
-            data-aos-offset="0"
-          >
-            <img
-              class="border-radius-shadow-img"
-              src="/images/gallery-photo-2.png"
-              alt="{{ gallery.img2 }}"
-              sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
-              eleventy:widths="288,568,1136,auto"
-            />
+
+          <div>
+            <a href="{{ "page.corporative_events.link" | i18n }}">
+              <div class="img-services">
+                <picture>
+                  <source
+                    srcset="
+                      /images/corporate-events-img-205w.webp 205w,
+                      /images/corporate-events-img-233w.webp 233w,
+                      /images/corporate-events-img-465w.webp 465w
+                    "
+                    media="(min-width: 1024px)"
+                    sizes="(min-width: 1163px) 231px, 20vw"
+                    width="205"
+                    height="347"
+                    type="image/webp"
+                  />
+                  <img
+                    class="border-radius-shadow-img"
+                    alt="{{ services.corporative_events.img }}"
+                    src="/images/corporate-events-img-m-231w.png"
+                    srcset="
+                      /images/corporate-events-img-m-231w.webp 231w,
+                      /images/corporate-events-img-m-348w.webp 348w,
+                      /images/corporate-events-img-m-627w.webp 627w,
+                      /images/corporate-events-img-m-767w.webp 767w
+                    "
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    width="231"
+                    height="154"
+                    loading="lazy"
+                    decoding="async"
+                    eleventy:ignore
+                  />
+                </picture>
+              </div>
+              <h3 class="service-title h4">
+                {{ services.corporative_events.heading }}
+              </h3>
+            </a>
+            <p class="subheading service-subheading-description">
+              {{ services.corporative_events.description }}
+            </p>
+            <a
+              href="{{ "page.corporative_events.link" | i18n }}"
+              class="service-link"
+            >
+              {{ i18n.see_more }}
+              <span> &rarr;</span>
+            </a>
           </div>
-          <div
-            data-aos="zoom-in-up"
-            data-aos-delay="600"
-            data-aos-duration="600"
-            data-aos-offset="0"
-          >
-            <img
-              class="border-radius-shadow-img"
-              src="/images/gallery-photo-3.png"
-              alt="{{ gallery.img3 }}"
-              sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
-              eleventy:widths="288,568,1136,auto"
-            />
+
+          <div>
+            <a href="{{ "page.special_occasions.link" | i18n }}">
+              <div class="img-services">
+                <picture>
+                  <source
+                    srcset="
+                      /images/special-ocassion-img-205w.webp 205w,
+                      /images/special-ocassion-img-233w.webp 233w,
+                      /images/special-ocassion-img-465w.webp 465w
+                    "
+                    media="(min-width: 1024px)"
+                    sizes="(min-width: 1163px) 231px, 20vw"
+                    width="205"
+                    height="347"
+                    type="image/webp"
+                  />
+                  <img
+                    class="border-radius-shadow-img"
+                    alt="{{ services.special_occasions.img }}"
+                    src="/images/special-ocassion-img-m-231w.png"
+                    srcset="
+                      /images/special-ocassion-img-m-231w.webp 231w,
+                      /images/special-ocassion-img-m-348w.webp 348w,
+                      /images/special-ocassion-img-m-627w.webp 627w,
+                      /images/special-ocassion-img-m-767w.webp 767w
+                    "
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    width="231"
+                    height="154"
+                    loading="lazy"
+                    decoding="async"
+                    eleventy:ignore
+                  />
+                </picture>
+              </div>
+              <h3 class="service-title h4">
+                {{ services.special_occasions.heading }}
+              </h3>
+            </a>
+            <p class="subheading service-subheading-description">
+              {{ services.special_occasions.description }}
+            </p>
+            <a
+              href="{{ "page.special_occasions.link" | i18n }}"
+              class="service-link"
+            >
+              {{ i18n.see_more }}
+              <span> &rarr;</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="{{ "page.product_rental.link" | i18n }}">
+              <div class="img-services">
+                <picture>
+                  <source
+                    srcset="
+                      /images/rental-img-205w.webp 205w,
+                      /images/rental-img-233w.webp 233w,
+                      /images/rental-img-465w.webp 465w
+                    "
+                    media="(min-width: 1024px)"
+                    sizes="(min-width: 1163px) 231px, 20vw"
+                    width="205"
+                    height="347"
+                    type="image/webp"
+                  />
+                  <img
+                    class="border-radius-shadow-img"
+                    alt="{{ services.product_rental.img }}"
+                    src="/images/rental-img-m-231w.png"
+                    srcset="
+                      /images/rental-img-m-231w.webp 231w,
+                      /images/rental-img-m-348w.webp 348w,
+                      /images/rental-img-m-627w.webp 627w,
+                      /images/rental-img-m-767w.webp 767w
+                    "
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    width="231"
+                    height="154"
+                    loading="lazy"
+                    decoding="async"
+                    eleventy:ignore
+                  />
+                </picture>
+              </div>
+              <h3 class="service-title h4">
+                {{ services.product_rental.heading }}
+              </h3>
+            </a>
+            <p class="subheading service-subheading-description">
+              {{ services.product_rental.description }}
+            </p>
+            <a
+              href="{{ "page.product_rental.link" | i18n }}"
+              class="service-link"
+            >
+              {{ i18n.see_catalog }}
+              <span> &rarr;</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="find-us-section section">
-      <div class="container find-us-container">
-        <iframe
-          class="find-us-map"
-          title="SOS Party Rental Florida | Google Maps"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255348.37250196404!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xacd68d155083dfa5%3A0x5e727525b677cc5a!2sSOS%20Party%20Rental!5e0!3m2!1sen!2suk!4v1736327185520!5m2!1sen!2suk"
-          width="600"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <div class="find-us-info">
-          <h2 class="h2 find-us-heading">{{ find_us.heading }}</h2>
-          <p class="subheading">8131 Southgate Blvr N. Lauderdale, FL 33068</p>
-          <div class="subheading">
-            <p>{{ i18n.monday }}: 7:00 - 18:00</p>
-            <p>{{ i18n.tuesday }}: 7:00 - 18:00</p>
-            <p>{{ i18n.wednesday }}: 7:00 - 18:00</p>
-            <p>{{ i18n.thursday }}: 7:00 - 18:00</p>
-            <p>{{ i18n.friday }}: 7:00 - 18:00</p>
-            <p>{{ i18n.saturday }}: 7:00 - 18:00</p>
-            <p>{{ i18n.sunday }}: 8:00 - 12:00</p>
+    <section
+      class="section process-section-home-page"
+      data-bg-img="{{ "/images/process-section-bg.webp" | url }}"
+    >
+      <div class="container process-container">
+        <div class="process-img-container">
+          <img
+            class="border-radius-shadow-img"
+            src="/images/kiss-wedding.png"
+            alt="{{ process.img1 }}"
+            sizes="(min-width: 1163px) 450px, (min-width: 1008px) 40vw, (min-width: 532px) 350px, 65vw"
+            eleventy:widths="201,450,700,900,auto"
+          />
+          <div class="overlapping-img">
+            <img
+              class="border-radius-shadow-img"
+              src="/images/ceremony-room.png"
+              alt="{{ process.img2 }}"
+              sizes="(min-width: 1163px) 228px, (min-width: 1008px) 20vw, (min-width: 532px) 177px, 35vw"
+              eleventy:widths="102,227,454,auto"
+            />
           </div>
         </div>
-      </div>
-    </section>
-  </div>
 
-  <section
-    class="section faq-section"
-    data-bg-img="{{ "/images/faq-bg.webp" | url }}"
-  >
-    <div class="container">
-      <h2 class="h2 faqs-heading">{{ faq.heading }}</h2>
+        <div class="process-info" data-aos="fade-left" data-aos-duration="900">
+          <p class="subheading section-subheading-title">
+            {{ process.subheading }}
+          </p>
+          <h2 class="h2">{{ process.heading }}</h2>
+          <div class="process-steps">
+            <div class="step-1">
+              <div class="step-number process-step-number">01</div>
+              <div class="process-step-description step-one">
+                {{ process.step1 }}
+              </div>
+            </div>
 
-      <div class="faqs-list">
-        {% for item in faq.items %}
-          <div class="faq">
-            <button class="faq-header">
-              <span class="subheading"> {{ item.question }} </span>
-              <svg
-                class="faq-header-chevron"
-                viewBox="0 0 12 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.87498 1.00001L5.99498 4.88001L2.11498 1.00001C1.92814 0.812752 1.67449 0.70752 1.40998 0.70752C1.14546 0.70752 0.891807 0.812752 0.704976 1.00001C0.314976 1.39001 0.314976 2.02001 0.704976 2.41001L5.29498 7.00001C5.68498 7.39001 6.31498 7.39001 6.70498 7.00001L11.295 2.41001C11.685 2.02001 11.685 1.39001 11.295 1.00001C10.905 0.620005 10.265 0.610005 9.87498 1.00001Z"
-                  fill="#666F77"
-                  fill-opacity="1"
-                />
-              </svg>
-            </button>
-            <div class="faq-body">
-              <p class="subheading">{{ item.answer }}</p>
+            <div class="step-2">
+              <div class="step-number process-step-number">02</div>
+              <div class="process-step-description">{{ process.step2 }}</div>
+            </div>
+
+            <div class="step-3">
+              <div class="step-number process-step-number">03</div>
+              <div class="process-step-description">{{ process.step3 }}</div>
             </div>
           </div>
-        {% endfor %}
+          <p class="subheading process-subheading-description">
+            {{ process.description }}
+          </p>
+          <a
+            href="https://api.whatsapp.com/send?phone=19543268989"
+            target="_blank"
+            class="btn-primary"
+          >
+            {{ process.cta }}
+          </a>
+        </div>
       </div>
+    </section>
+
+    {% include "components/testimonials.njk" %}
+
+    <div
+      class="find-us-and-gallery-bg"
+      data-bg-img="{{ "/images/leaves-gallery.webp" | url }}"
+    >
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="gallery-info-section">
+            <h2 class="h2">{{ gallery.heading }}</h2>
+            <a href="{{ "page.gallery.link" | i18n }}" class="btn-secondary">
+              <span aria-hidden>{{ i18n.see_more }}</span>
+              <span class="sr-only">{{ gallery.see_more_label }}</span>
+            </a>
+          </div>
+          <div class="gallery-photos">
+            <div
+              data-aos="zoom-in-up"
+              data-aos-duration="600"
+              data-aos-offset="0"
+            >
+              <img
+                class="border-radius-shadow-img"
+                src="/images/gallery-photo-1.png"
+                alt="{{ gallery.img1 }}"
+                sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
+                eleventy:widths="288,568,1136,auto"
+              />
+            </div>
+            <div
+              data-aos="zoom-in-up"
+              data-aos-delay="300"
+              data-aos-duration="600"
+              data-aos-offset="0"
+            >
+              <img
+                class="border-radius-shadow-img"
+                src="/images/gallery-photo-2.png"
+                alt="{{ gallery.img2 }}"
+                sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
+                eleventy:widths="288,568,1136,auto"
+              />
+            </div>
+            <div
+              data-aos="zoom-in-up"
+              data-aos-delay="600"
+              data-aos-duration="600"
+              data-aos-offset="0"
+            >
+              <img
+                class="border-radius-shadow-img"
+                src="/images/gallery-photo-3.png"
+                alt="{{ gallery.img3 }}"
+                sizes="(min-width: 1163px) 364px, (min-width: 768px) 34vw, 100vw"
+                eleventy:widths="288,568,1136,auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="find-us-section section">
+        <div class="container find-us-container">
+          <iframe
+            class="find-us-map"
+            title="SOS Party Rental Florida | Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255348.37250196404!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xacd68d155083dfa5%3A0x5e727525b677cc5a!2sSOS%20Party%20Rental!5e0!3m2!1sen!2suk!4v1736327185520!5m2!1sen!2suk"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="find-us-info">
+            <h2 class="h2 find-us-heading">{{ find_us.heading }}</h2>
+            <p class="subheading">
+              8131 Southgate Blvr N. Lauderdale, FL 33068
+            </p>
+            <div class="subheading">
+              <p>{{ i18n.monday }}: 7:00 - 18:00</p>
+              <p>{{ i18n.tuesday }}: 7:00 - 18:00</p>
+              <p>{{ i18n.wednesday }}: 7:00 - 18:00</p>
+              <p>{{ i18n.thursday }}: 7:00 - 18:00</p>
+              <p>{{ i18n.friday }}: 7:00 - 18:00</p>
+              <p>{{ i18n.saturday }}: 7:00 - 18:00</p>
+              <p>{{ i18n.sunday }}: 8:00 - 12:00</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-{% endblock main %}
+
+    <section
+      class="section faq-section"
+      data-bg-img="{{ "/images/faq-bg.webp" | url }}"
+    >
+      <div class="container">
+        <h2 class="h2 faqs-heading">{{ faq.heading }}</h2>
+
+        <div class="faqs-list">
+          {% for item in faq.items %}
+            <div class="faq">
+              <button class="faq-header">
+                <span class="subheading"> {{ item.question }} </span>
+                <svg
+                  class="faq-header-chevron"
+                  viewBox="0 0 12 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.87498 1.00001L5.99498 4.88001L2.11498 1.00001C1.92814 0.812752 1.67449 0.70752 1.40998 0.70752C1.14546 0.70752 0.891807 0.812752 0.704976 1.00001C0.314976 1.39001 0.314976 2.02001 0.704976 2.41001L5.29498 7.00001C5.68498 7.39001 6.31498 7.39001 6.70498 7.00001L11.295 2.41001C11.685 2.02001 11.685 1.39001 11.295 1.00001C10.905 0.620005 10.265 0.610005 9.87498 1.00001Z"
+                    fill="#666F77"
+                    fill-opacity="1"
+                  />
+                </svg>
+              </button>
+              <div class="faq-body">
+                <p class="subheading">{{ item.answer }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock content %}
